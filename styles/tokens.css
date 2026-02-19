@@ -1,0 +1,19 @@
+/*
+ * blorentz.com — Site-specific token overrides
+ * Extends CascadeDS base tokens with custom typography and brand values.
+ */
+
+:root {
+  /* Typography — Three-Voice System
+   * General Sans, Space Grotesk, JetBrains Mono, Inter
+   * Font-family values are injected via next/font CSS variables on <body>.
+   * These tokens alias them for use in CSS Modules.
+   */
+  --font-family-display: var(--font-family-display);
+  --font-family-technical: var(--font-family-technical);
+  --font-family-body: var(--font-family-body);
+  --font-family-mono: var(--font-family-mono);
+
+  /* Background aliases — CDS defines --background-primary, site uses --background-default */
+  --background-default: var(--background-primary);
+}

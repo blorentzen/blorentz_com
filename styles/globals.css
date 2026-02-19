@@ -1,0 +1,50 @@
+/* CascadeDS base styles and tokens */
+@import "../node_modules/@empac/cascadeds/dist/styles.css";
+
+/* Site-specific token overrides */
+@import "./tokens.css";
+
+/*
+ * Global resets and base styles for blorentz.com
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  font-family: var(--font-family-body), system-ui, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background-default);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}

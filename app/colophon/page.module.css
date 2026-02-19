@@ -1,0 +1,162 @@
+.page {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+  padding-bottom: var(--spacing-64);
+}
+
+.body {
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Tech Stack */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stackItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--spacing-16);
+  padding: var(--spacing-12) 0;
+  border-bottom: 1px solid var(--border-default);
+  align-items: baseline;
+}
+
+.stackItem:last-child {
+  border-bottom: none;
+}
+
+.stackName {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stackDescription {
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+}
+
+/* Typography */
+
+.fonts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-24);
+  margin-top: var(--spacing-24);
+}
+
+.fontCard {
+  padding: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+}
+
+.fontHeader {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-8);
+}
+
+.fontName {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-20);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.fontRole {
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fontUsage {
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-16);
+}
+
+.fontSpecimen {
+  font-size: var(--font-size-24);
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-12);
+}
+
+.fontVariable {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  background-color: var(--background-secondary);
+  padding: var(--spacing-2) var(--spacing-8);
+  border-radius: var(--radius-4);
+}
+
+/* Design Principles */
+
+.principles {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.principle {
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: var(--spacing-16);
+  border-left: 2px solid var(--primary-500);
+}
+
+.principle strong {
+  color: var(--text-primary);
+}
+
+/* Credits */
+
+.credits {
+  padding-top: var(--spacing-48);
+  border-top: 1px solid var(--border-default);
+}
+
+.creditsHeading {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-24);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-12);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0 var(--spacing-16);
+    padding-bottom: var(--spacing-48);
+  }
+
+  .stackItem {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .fonts {
+    grid-template-columns: 1fr;
+  }
+
+  .fontSpecimen {
+    font-size: var(--font-size-20);
+  }
+}

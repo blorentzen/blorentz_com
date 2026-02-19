@@ -1,0 +1,40 @@
+.header {
+  padding: var(--spacing-48) 0 var(--spacing-32);
+}
+
+.title {
+  font-size: var(--font-size-48);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.title.display {
+  font-family: var(--font-family-display);
+}
+
+.title.technical {
+  font-family: var(--font-family-technical);
+}
+
+.subtitle {
+  margin-top: var(--spacing-12);
+  font-size: var(--font-size-20);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 60ch;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-32) 0 var(--spacing-24);
+  }
+
+  .title {
+    font-size: var(--font-size-32);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-16);
+  }
+}

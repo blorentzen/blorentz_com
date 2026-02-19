@@ -1,0 +1,23 @@
+.page {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+  padding-bottom: var(--spacing-64);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-24);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0 var(--spacing-16);
+    padding-bottom: var(--spacing-48);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
