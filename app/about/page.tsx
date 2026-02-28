@@ -8,30 +8,44 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Strategic front-end engineering leader with Fortune 500 experience at T-Mobile and Apple, now running Empac.",
+    "Britton Lorentzen — builder, strategist, racing kid turned Fortune 500 leader. Sr. Creative Development Manager at T-Mobile. Founder of Empac.",
 };
 
 const timeline = [
   {
+    company: "T-Mobile",
+    role: "Sr. Creative Development Manager",
+    period: "2017 – Present",
+    description:
+      "Started as a design intern. Four roles in eight years — from designing device launch pages to leading creative development for high-priority experiences including the savings calculator, Super Bowl landing pages, FN5GL, and the T-Mobile.com redesign.",
+  },
+  {
     company: "Empac",
     role: "Founder & Principal Consultant",
-    period: "2022 – Present",
+    period: "2010 – Present",
     description:
-      "Founded a boutique consultancy delivering Fortune 500-quality engineering to businesses that need it most. Built CascadeDS, shipped client projects across healthcare, energy, and SaaS.",
+      "Founded as Emerald Pacific Outfitters, evolved into a technology consultancy for established businesses. Built CascadeDS (a design system powering multiple applications), Sidecar (a retainer management platform), and shipped work across healthcare, energy, and SaaS.",
   },
   {
     company: "Apple",
-    role: "Senior Front-End Engineer",
-    period: "2021 – 2022",
+    role: "Designer & Front-End Developer",
+    period: "2016",
     description:
-      "Worked on internal tools and platforms at Apple, applying deep front-end expertise to mission-critical applications used across the organization.",
+      "Designed and built internal tools, product guides, and communications assets at Apple's Cupertino campus. Supported the UX team on usability testing for an internal website redesign.",
   },
   {
-    company: "T-Mobile",
-    role: "Lead Front-End Engineer",
-    period: "2018 – 2021",
+    company: "Apple",
+    role: "Specialist",
+    period: "2012 – 2016",
     description:
-      "Led front-end engineering for high-traffic consumer-facing products. Built the Savings Calculator (2M+ calculations/quarter) and the Super Bowl landing page (50M+ pageviews).",
+      "Tacoma retail. Connected customers with technology solutions — from students buying their first laptop to businesses outfitting entire teams.",
+  },
+  {
+    company: "L2R Snowboards",
+    role: "Visual Designer & Marketing Coordinator",
+    period: "2011 – 2015",
+    description:
+      "Built the digital presence for a Pacific Northwest snowboard company. Coordinated co-branding campaigns, managed distributor relationships, and helped earn the brand a spot at the SIA trade show. Traveled to Denver to sell it.",
   },
 ];
 
@@ -39,22 +53,22 @@ const values = [
   {
     title: "Ship, then polish",
     description:
-      "Working software beats perfect plans. I get things live fast, then iterate based on real usage and feedback.",
+      "Working software beats perfect plans. I'd rather put something real in front of users and iterate than spend months perfecting something nobody's tested.",
+  },
+  {
+    title: "Diagnose before you build",
+    description:
+      "The right answer isn't always custom code. Sometimes it's configuring what you have. Sometimes it's migrating to a better platform. The value is knowing which one before anyone writes a line of code.",
   },
   {
     title: "Own the outcome",
     description:
-      "I don't just write code — I own the result. That means caring about performance, accessibility, conversions, and everything downstream of the deploy.",
+      "I care about whether the thing works — not just whether the code is clean. Performance, accessibility, conversions, business results. The metric is impact, not effort.",
   },
   {
-    title: "Build for the team",
+    title: "Stay in the work",
     description:
-      "Every system I build is meant to outlast me. Clean code, clear documentation, and patterns that other engineers can pick up and run with.",
-  },
-  {
-    title: "Stay technical",
-    description:
-      "Leadership doesn't mean leaving the code behind. I lead by staying in the work — reviewing, architecting, and shipping alongside the team.",
+      "Leadership doesn't mean leaving the craft behind. I still design in Figma, build in VS Code, and review every line that ships. The best strategic decisions come from people who understand what they're deciding about.",
   },
 ];
 
@@ -66,19 +80,20 @@ export default function AboutPage() {
       <section className={styles.intro}>
         <div className={styles.introText}>
           <p className={styles.lead}>
-            I&apos;m a front-end engineering leader who&apos;s spent a career
-            building things that matter at companies like T-Mobile and Apple.
+            I build things that solve problems — from T-Mobile&apos;s
+            customer-facing tools used by millions, to custom solutions for
+            businesses through my consultancy, Empac.
           </p>
           <p className={styles.body}>
-            Now I run Empac, a boutique consultancy where I bring that same
-            Fortune 500 rigor — the architecture, the performance standards,
-            the attention to detail — to businesses that can&apos;t hire a team
-            of 50 but need one person who thinks like they have one.
+            I&apos;ve spent my career at the intersection of strategy and
+            execution, and I like it there. At T-Mobile, I lead creative
+            development for high-stakes digital experiences. Through Empac, I
+            bring that same thinking to established businesses who&apos;ve
+            outgrown what off-the-shelf tools can do for them.
           </p>
           <p className={styles.body}>
-            I believe great engineering is invisible. Users shouldn&apos;t
-            notice the technology — they should just notice that things work
-            well, load fast, and feel right.
+            Before any of that, I was a racing kid who taught himself to design
+            because nobody was going to build his brand for him.
           </p>
         </div>
         <div className={styles.introImage}>
@@ -86,10 +101,71 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <Section heading="I've always been a builder.">
+        <div className={styles.narrowContent}>
+          <p className={styles.body}>
+            I started racing go-karts at 12. By 15, I was behind the wheel of a
+            410 sprint car — a 900-horsepower open-wheel machine with no
+            traction control, no power steering, and no room for hesitation. I
+            won the karting grand nationals that year and got invited to the Red
+            Bull Driver Search. I was the youngest person there.
+          </p>
+          <p className={styles.body}>
+            Racing didn&apos;t become a career, but it shaped everything that
+            came after. It taught me to commit to a line before you can see
+            where it goes. It taught me that preparation matters more than
+            talent. And it taught me that the gap between &ldquo;good
+            enough&rdquo; and &ldquo;great&rdquo; is usually a decision someone
+            was afraid to make.
+          </p>
+          <p className={styles.body}>
+            When I wasn&apos;t racing, I was building things. At 16, I started
+            Emerald Pacific Outfitters — a scrappy brand that made apparel and
+            shot videos to help action sports athletes in the Pacific Northwest
+            get noticed by sponsors. That eventually became Empac.
+          </p>
+          <p className={styles.body}>
+            To fund it, I worked at the Apple Store in Tacoma. I kept submitting
+            work samples to Apple&apos;s corporate teams until one of them
+            invited me to Cupertino for a project. I spent five months designing
+            internal tools, building product guides, and supporting the UX team
+            on usability research. When that wrapped up, T-Mobile brought me in.
+          </p>
+          <p className={styles.body}>
+            I started at T-Mobile as a design intern. Four roles and eight years
+            later, I lead creative development for some of their
+            highest-priority digital experiences — the savings calculator used
+            by millions of customers, FN5GL, Super Bowl landing pages, campaign
+            deal hubs, and the T-Mobile.com redesign. The work is fast,
+            high-stakes, and built for an audience of tens of millions.
+          </p>
+          <p className={styles.body}>
+            Empac has been running the whole time. What started as a one-person
+            action sports brand has evolved into a consultancy that helps
+            established businesses figure out the right technology approach for
+            their business. Sometimes that means configuring what they already
+            have. Sometimes it means finding them the right platform. Sometimes
+            it means building something custom from scratch. The value is
+            knowing which one.
+          </p>
+          <p className={styles.body}>
+            I studied business at the University of Washington with a focus on
+            marketing, then supplemented it with several years of computer
+            science coursework. The combination of business strategy and
+            technical execution is the thing I keep coming back to — it&apos;s
+            what I do at T-Mobile, it&apos;s what I do at Empac, and it&apos;s
+            what I look for in every project I take on.
+          </p>
+        </div>
+      </Section>
+
       <Section heading="Career">
         <div className={styles.timeline}>
           {timeline.map((item) => (
-            <div key={item.company} className={styles.timelineItem}>
+            <div
+              key={`${item.company}-${item.period}`}
+              className={styles.timelineItem}
+            >
               <div className={styles.timelineMeta}>
                 <span className={styles.timelineCompany}>{item.company}</span>
                 <span className={styles.timelinePeriod}>{item.period}</span>
@@ -114,16 +190,37 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <Section heading="When I'm not building things">
+        <div className={styles.narrowContent}>
+          <p className={styles.body}>
+            I live in the Pacific Northwest with my wife Kelly and our daughter
+            Eloise. She was born in March 2024, and she&apos;s the reason I
+            think about time differently than I used to.
+          </p>
+          <p className={styles.body}>
+            I still follow motorsports — the racing bug doesn&apos;t go away, it
+            just changes shape. I&apos;m into music production and DJing when I
+            find the time, and I&apos;ve traveled enough to know that the
+            Pacific Northwest is where I want to be.
+          </p>
+        </div>
+      </Section>
+
       <section className={styles.cta}>
-        <h2 className={styles.ctaHeading}>Want to work together?</h2>
+        <h2 className={styles.ctaHeading}>Want to see the work?</h2>
         <p className={styles.body}>
-          I take on a limited number of engagements at a time. If you&apos;re
-          building something that needs senior-level front-end expertise,
-          let&apos;s talk.
+          I take on a limited number of engagements at a time through Empac. If
+          you&apos;re curious about what that looks like, start with the work —
+          or head to Empac to learn more.
         </p>
-        <Link href="/work" className={styles.ctaLink}>
-          See my work
-        </Link>
+        <div className={styles.ctaLinks}>
+          <Link href="/work" className={styles.ctaLinkPrimary}>
+            See my work
+          </Link>
+          <Link href="/empac" className={styles.ctaLinkSecondary}>
+            Learn about Empac
+          </Link>
+        </div>
       </section>
     </div>
   );
