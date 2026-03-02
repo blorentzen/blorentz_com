@@ -257,49 +257,26 @@
   font-size: var(--font-size-16);
 }
 
-/* Next Project */
+/* More Work */
 
-.nextProject {
+.moreWork {
   margin-top: var(--spacing-48);
   padding: var(--spacing-32) 0;
   border-top: 1px solid var(--border-default);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-8);
 }
 
-.nextLabel {
-  font-family: var(--font-family-technical);
-  font-size: var(--font-size-12);
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.nextLink {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-4);
-  transition: opacity var(--transition-fast);
-}
-
-.nextLink:hover {
-  opacity: 0.8;
-}
-
-.nextClient {
-  font-family: var(--font-family-technical);
-  font-size: var(--font-size-14);
-  color: var(--primary-500);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.nextTitle {
+.moreWorkHeading {
   font-family: var(--font-family-display);
-  font-size: var(--font-size-24);
+  font-size: var(--font-size-32);
   font-weight: 600;
   color: var(--text-primary);
+  margin-bottom: var(--spacing-24);
+}
+
+.moreWorkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-24);
 }
 
 /* Voice-based styling */
@@ -360,5 +337,9 @@
 
   .testimonial {
     padding: var(--spacing-16) var(--spacing-24);
+  }
+
+  .moreWorkGrid {
+    grid-template-columns: 1fr;
   }
 }

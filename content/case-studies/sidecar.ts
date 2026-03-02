@@ -9,6 +9,8 @@ export const sidecar: CaseStudy = {
   role: "Creator & Sole Developer",
   order: 5,
   headline: "A retainer management platform (in progress)",
+  heroImage: "https://cdn.empac.co/portfolio/images/sidecar-example-thumb.jpg",
+  videoUrl: "https://cdn.empac.co/portfolio/video/sidecar-demo.mp4",
   status: "in-progress",
   techStack: ["React", "Node.js", "Supabase", "CascadeDS", "Stripe"],
   timeline: "2025 – Present (active development, pre-launch)",

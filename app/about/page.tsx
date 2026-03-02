@@ -256,9 +256,9 @@ export default function AboutPage() {
           <Link href="/work" className={styles.ctaLinkPrimary}>
             See my work
           </Link>
-          <Link href="/empac" className={styles.ctaLinkSecondary}>
+          <a href="https://empac.co" target="_blank" rel="noopener noreferrer" className={styles.ctaLinkSecondary}>
             Learn about Empac
-          </Link>
+          </a>
         </div>
       </section>
       </Reveal>

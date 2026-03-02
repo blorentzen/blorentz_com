@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 import {
   getCaseStudies,
   getCaseStudy,
   getCaseStudySlugs,
 } from "@/content/case-studies";
+import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
 import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 import { StatCards } from "@/components/StatCards/StatCards";
 import { Placeholder } from "@/components/Placeholder/Placeholder";
@@ -30,10 +30,20 @@ export async function generateMetadata({
   const study = getCaseStudy(slug);
   if (!study) return {};
 
-  return {
+  const meta: Metadata = {
     title: study.title,
     description: study.headline,
+    openGraph: {
+      title: `${study.title} — ${study.client}`,
+      description: study.headline,
+    },
   };
+
+  if (study.heroImage?.startsWith("https://")) {
+    meta.openGraph!.images = [{ url: study.heroImage, width: 1200, height: 675 }];
+  }
+
+  return meta;
 }
 
 function renderParagraphs(text: string, className: string) {
@@ -44,11 +54,11 @@ function renderParagraphs(text: string, className: string) {
   ));
 }
 
-function getNextStudy(currentSlug: string) {
+function getSuggestedStudies(currentSlug: string) {
   const all = getCaseStudies();
   const currentIndex = all.findIndex((cs) => cs.slug === currentSlug);
-  const nextIndex = (currentIndex + 1) % all.length;
-  return all[nextIndex];
+  const others = [...all.slice(currentIndex + 1), ...all.slice(0, currentIndex)];
+  return others.slice(0, 3);
 }
 
 export default async function CaseStudyPage({ params }: PageProps) {
@@ -59,7 +69,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     notFound();
   }
 
-  const nextStudy = getNextStudy(slug);
+  const suggested = getSuggestedStudies(slug);
   const hasHeroImage = study.heroImage?.startsWith("https://");
 
   return (
@@ -238,15 +248,16 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </Section>
       </Reveal>
 
-      {/* 7. Next Project */}
+      {/* 7. More Work */}
       <Reveal>
-        <nav className={styles.nextProject}>
-          <span className={styles.nextLabel}>Next Project</span>
-          <Link href={`/work/${nextStudy.slug}`} className={styles.nextLink}>
-            <span className={styles.nextClient}>{nextStudy.client}</span>
-            <span className={styles.nextTitle}>{nextStudy.title}</span>
-          </Link>
-        </nav>
+        <section className={styles.moreWork}>
+          <h2 className={styles.moreWorkHeading}>More Work</h2>
+          <div className={styles.moreWorkGrid}>
+            {suggested.map((s) => (
+              <CaseStudyCard key={s.slug} study={s} />
+            ))}
+          </div>
+        </section>
       </Reveal>
     </div>
   );
