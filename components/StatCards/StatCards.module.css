@@ -4,6 +4,10 @@
   gap: var(--spacing-16);
 }
 
+.grid :global(.empac-stat-card) {
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

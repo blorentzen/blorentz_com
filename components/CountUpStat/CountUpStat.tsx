@@ -77,8 +77,8 @@ export function CountUpStat({ stat, label, variant }: CountUpStatProps) {
   }, [isInView, stat]);
 
   return (
-    <div ref={ref}>
-      <StatCard stat={displayStat} label={label} variant={variant} />
+    <div ref={ref} style={{ height: "100%" }}>
+      <StatCard stat={displayStat} label={label} variant={variant} style={{ height: "100%" }} />
     </div>
   );
 }
