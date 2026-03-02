@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description:
     "Strategic front-end engineering leader. Fortune 500 experience, boutique consultancy execution.",
+  icons: {
+    icon: "https://cdn.empac.co/portfolio/images/empac-logo-browser.jpg",
+    shortcut: "https://cdn.empac.co/portfolio/images/empac-logo-browser.jpg",
+    apple: "https://cdn.empac.co/portfolio/images/empac-logo-browser.jpg",
+  },
 };
 
 export default function RootLayout({

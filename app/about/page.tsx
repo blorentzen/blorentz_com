@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/PageHeader/PageHeader";
 import { Section } from "@/components/Section/Section";
-import { Placeholder } from "@/components/Placeholder/Placeholder";
+import { PhotoCollage } from "@/components/PhotoCollage/PhotoCollage";
+import { Timeline } from "@/components/Timeline/Timeline";
+import { ValueCard } from "@/components/ValueCard/ValueCard";
+import { Reveal } from "@/components/Reveal/Reveal";
 import styles from "./page.module.css";
+
+const collagePhotos = [
+  {
+    src: "https://cdn.empac.co/portfolio/images/britton-kelly-eloise-in-hawaii.jpg",
+    alt: "Britton, Kelly, and Eloise in Hawaii",
+  },
+  {
+    src: "https://cdn.empac.co/portfolio/images/britton-kelly-at-husky-game.jpg",
+    alt: "Britton and Kelly at a Husky game",
+  },
+  {
+    src: "https://cdn.empac.co/portfolio/images/britton-djing-live-on-twitch.jpg",
+    alt: "Britton DJing live on Twitch",
+  },
+  {
+    src: "https://cdn.empac.co/portfolio/images/britton-competing-at-hyperx-arena.jpg",
+    alt: "Britton competing at HyperX Arena",
+  },
+];
 
 export const metadata: Metadata = {
   title: "About",
@@ -75,138 +96,156 @@ const values = [
 export default function AboutPage() {
   return (
     <div className={styles.page}>
-      <PageHeader title="About" />
-
-      <section className={styles.intro}>
-        <div className={styles.introText}>
-          <p className={styles.lead}>
+      {/* Hero */}
+      <Reveal>
+        <header className={styles.hero}>
+          <p className={styles.label}>About</p>
+          <h1 className={styles.title}>Builder first, leader second.</h1>
+          <p className={styles.headline}>
             I build things that solve problems — from T-Mobile&apos;s
             customer-facing tools used by millions, to custom solutions for
             businesses through my consultancy, Empac.
           </p>
-          <p className={styles.body}>
-            I&apos;ve spent my career at the intersection of strategy and
-            execution, and I like it there. At T-Mobile, I lead creative
-            development for high-stakes digital experiences. Through Empac, I
-            bring that same thinking to established businesses who&apos;ve
-            outgrown what off-the-shelf tools can do for them.
-          </p>
-          <p className={styles.body}>
-            Before any of that, I was a racing kid who taught himself to design
-            because nobody was going to build his brand for him.
-          </p>
-        </div>
-        <div className={styles.introImage}>
-          <Placeholder aspectRatio="3 / 4" label="Portrait photo" />
-        </div>
-      </section>
+        </header>
+      </Reveal>
 
-      <Section heading="I've always been a builder.">
-        <div className={styles.narrowContent}>
-          <p className={styles.body}>
-            I started racing go-karts at 12. By 15, I was behind the wheel of a
-            410 sprint car — a 900-horsepower open-wheel machine with no
-            traction control, no power steering, and no room for hesitation. I
-            won the karting grand nationals that year and got invited to the Red
-            Bull Driver Search. I was the youngest person there.
-          </p>
-          <p className={styles.body}>
-            Racing didn&apos;t become a career, but it shaped everything that
-            came after. It taught me to commit to a line before you can see
-            where it goes. It taught me that preparation matters more than
-            talent. And it taught me that the gap between &ldquo;good
-            enough&rdquo; and &ldquo;great&rdquo; is usually a decision someone
-            was afraid to make.
-          </p>
-          <p className={styles.body}>
-            When I wasn&apos;t racing, I was building things. At 16, I started
-            Emerald Pacific Outfitters — a scrappy brand that made apparel and
-            shot videos to help action sports athletes in the Pacific Northwest
-            get noticed by sponsors. That eventually became Empac.
-          </p>
-          <p className={styles.body}>
-            To fund it, I worked at the Apple Store in Tacoma. I kept submitting
-            work samples to Apple&apos;s corporate teams until one of them
-            invited me to Cupertino for a project. I spent five months designing
-            internal tools, building product guides, and supporting the UX team
-            on usability research. When that wrapped up, T-Mobile brought me in.
-          </p>
-          <p className={styles.body}>
-            I started at T-Mobile as a design intern. Four roles and eight years
-            later, I lead creative development for some of their
-            highest-priority digital experiences — the savings calculator used
-            by millions of customers, FN5GL, Super Bowl landing pages, campaign
-            deal hubs, and the T-Mobile.com redesign. The work is fast,
-            high-stakes, and built for an audience of tens of millions.
-          </p>
-          <p className={styles.body}>
-            Empac has been running the whole time. What started as a one-person
-            action sports brand has evolved into a consultancy that helps
-            established businesses figure out the right technology approach for
-            their business. Sometimes that means configuring what they already
-            have. Sometimes it means finding them the right platform. Sometimes
-            it means building something custom from scratch. The value is
-            knowing which one.
-          </p>
-          <p className={styles.body}>
-            I studied business at the University of Washington with a focus on
-            marketing, then supplemented it with several years of computer
-            science coursework. The combination of business strategy and
-            technical execution is the thing I keep coming back to — it&apos;s
-            what I do at T-Mobile, it&apos;s what I do at Empac, and it&apos;s
-            what I look for in every project I take on.
-          </p>
-        </div>
-      </Section>
+      {/* Photo Collage */}
+      <Reveal delay={0.15}>
+        <PhotoCollage photos={collagePhotos} className={styles.photoRow} />
+      </Reveal>
 
-      <Section heading="Career">
-        <div className={styles.timeline}>
-          {timeline.map((item) => (
-            <div
-              key={`${item.company}-${item.period}`}
-              className={styles.timelineItem}
-            >
-              <div className={styles.timelineMeta}>
-                <span className={styles.timelineCompany}>{item.company}</span>
-                <span className={styles.timelinePeriod}>{item.period}</span>
-              </div>
-              <div className={styles.timelineContent}>
-                <h3 className={styles.timelineRole}>{item.role}</h3>
-                <p className={styles.body}>{item.description}</p>
-              </div>
+      {/* Story */}
+      <Reveal>
+        <div className={styles.contentSection}>
+          <Section heading="The Full Story">
+            <div className={styles.narrative}>
+            <Reveal>
+              <p className={styles.body}>
+                I&apos;ve spent my career at the intersection of strategy and
+                execution, and I like it there. At T-Mobile, I lead creative
+                development for high-stakes digital experiences. Through Empac, I
+                bring that same thinking to established businesses who&apos;ve
+                outgrown what off-the-shelf tools can do for them.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                Before any of that, I was a racing kid who taught himself to design
+                because nobody was going to build his brand for him.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                I started racing go-karts at 12. By 15, I was behind the wheel of a
+                410 sprint car — a 900-horsepower open-wheel machine with no
+                traction control, no power steering, and no room for hesitation. I
+                won the karting grand nationals that year and got invited to the Red
+                Bull Driver Search. I was the youngest person there.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                Racing didn&apos;t become a career, but it shaped everything that
+                came after. It taught me to commit to a line before you can see
+                where it goes. It taught me that preparation matters more than
+                talent. And it taught me that the gap between &ldquo;good
+                enough&rdquo; and &ldquo;great&rdquo; is usually a decision someone
+                was afraid to make.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                When I wasn&apos;t racing, I was building things. At 16, I started
+                Emerald Pacific Outfitters — a scrappy brand that made apparel and
+                shot videos to help action sports athletes in the Pacific Northwest
+                get noticed by sponsors. That eventually became Empac.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                To fund it, I worked at the Apple Store in Tacoma. I kept submitting
+                work samples to Apple&apos;s corporate teams until one of them
+                invited me to Cupertino for a project. I spent five months designing
+                internal tools, building product guides, and supporting the UX team
+                on usability research. When that wrapped up, T-Mobile brought me in.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                I started at T-Mobile as a design intern. Four roles and eight years
+                later, I lead creative development for some of their
+                highest-priority digital experiences — the savings calculator used
+                by millions of customers, FN5GL, Super Bowl landing pages, campaign
+                deal hubs, and the T-Mobile.com redesign. The work is fast,
+                high-stakes, and built for an audience of tens of millions.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                Empac has been running the whole time. What started as a one-person
+                action sports brand has evolved into a consultancy that helps
+                established businesses figure out the right technology approach for
+                their business. Sometimes that means configuring what they already
+                have. Sometimes it means finding them the right platform. Sometimes
+                it means building something custom from scratch. The value is
+                knowing which one.
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className={styles.body}>
+                I studied business at the University of Washington with a focus on
+                marketing, then supplemented it with several years of computer
+                science coursework. The combination of business strategy and
+                technical execution is the thing I keep coming back to — it&apos;s
+                what I do at T-Mobile, it&apos;s what I do at Empac, and it&apos;s
+                what I look for in every project I take on.
+              </p>
+            </Reveal>
             </div>
-          ))}
+          </Section>
         </div>
-      </Section>
+      </Reveal>
 
-      <Section heading="How I Work">
-        <div className={styles.values}>
-          {values.map((value) => (
-            <div key={value.title} className={styles.valueCard}>
-              <h3 className={styles.valueTitle}>{value.title}</h3>
-              <p className={styles.valueDescription}>{value.description}</p>
-            </div>
-          ))}
+      <Reveal>
+        <Section heading="Career">
+          <Timeline entries={timeline} />
+        </Section>
+      </Reveal>
+
+      <Reveal>
+        <Section heading="How I Work">
+          <div className={styles.values}>
+            {values.map((value) => (
+              <ValueCard
+                key={value.title}
+                title={value.title}
+                description={value.description}
+              />
+            ))}
+          </div>
+        </Section>
+      </Reveal>
+
+      <Reveal>
+        <div className={styles.contentSection}>
+          <Section heading="When I'm not building things">
+            <p className={styles.body}>
+              I live in the Pacific Northwest with my wife Kelly and our daughter
+              Eloise. She was born in March 2024, and she&apos;s the reason I
+              think about time differently than I used to.
+            </p>
+            <p className={styles.body}>
+              I still follow motorsports — the racing bug doesn&apos;t go away, it
+              just changes shape. I&apos;m into music production and DJing when I
+              find the time, and I&apos;ve traveled enough to know that the
+              Pacific Northwest is where I want to be.
+            </p>
+          </Section>
         </div>
-      </Section>
+      </Reveal>
 
-      <Section heading="When I'm not building things">
-        <div className={styles.narrowContent}>
-          <p className={styles.body}>
-            I live in the Pacific Northwest with my wife Kelly and our daughter
-            Eloise. She was born in March 2024, and she&apos;s the reason I
-            think about time differently than I used to.
-          </p>
-          <p className={styles.body}>
-            I still follow motorsports — the racing bug doesn&apos;t go away, it
-            just changes shape. I&apos;m into music production and DJing when I
-            find the time, and I&apos;ve traveled enough to know that the
-            Pacific Northwest is where I want to be.
-          </p>
-        </div>
-      </Section>
-
-      <section className={styles.cta}>
+      <Reveal>
+        <section className={styles.cta}>
         <h2 className={styles.ctaHeading}>Want to see the work?</h2>
         <p className={styles.body}>
           I take on a limited number of engagements at a time through Empac. If
@@ -222,6 +261,7 @@ export default function AboutPage() {
           </Link>
         </div>
       </section>
+      </Reveal>
     </div>
   );
 }

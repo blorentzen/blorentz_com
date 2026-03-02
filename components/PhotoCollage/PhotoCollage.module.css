@@ -1,0 +1,46 @@
+.collage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-16);
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 1 / 1;
+}
+
+.frame1 {
+  transform: rotate(-1.5deg);
+}
+
+.frame2 {
+  transform: rotate(1deg) translateY(8px);
+}
+
+.frame3 {
+  transform: rotate(-0.75deg) translateY(-4px);
+}
+
+.frame4 {
+  transform: rotate(1.25deg);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.frame:hover .image {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .collage {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+}

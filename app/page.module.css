@@ -7,10 +7,13 @@
 /* Hero */
 
 .hero {
+  position: relative;
   padding: var(--spacing-64) 0 var(--spacing-48);
 }
 
 .heroTitle {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-family-display);
   font-size: var(--font-size-64);
   font-weight: 700;
@@ -19,6 +22,8 @@
 }
 
 .heroTagline {
+  position: relative;
+  z-index: 1;
   margin-top: var(--spacing-16);
   font-size: var(--font-size-20);
   color: var(--text-secondary);
@@ -27,6 +32,8 @@
 }
 
 .heroCtas {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: var(--spacing-16);
   margin-top: var(--spacing-32);
@@ -89,36 +96,6 @@
   opacity: 0.8;
 }
 
-/* About Teaser */
-
-.aboutTeaser {
-  padding: var(--spacing-48) 0 var(--spacing-64);
-  border-top: 1px solid var(--border-default);
-}
-
-.aboutTeaserContent {
-  max-width: 60ch;
-}
-
-.aboutTeaserHeading {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-32);
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
-}
-
-.aboutTeaserText {
-  margin-top: var(--spacing-12);
-  font-size: var(--font-size-18);
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.aboutTeaser .ctaSecondary {
-  margin-top: var(--spacing-24);
-}
-
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -147,11 +124,4 @@
     grid-template-columns: 1fr;
   }
 
-  .aboutTeaserHeading {
-    font-size: var(--font-size-24);
-  }
-
-  .aboutTeaserText {
-    font-size: var(--font-size-16);
-  }
 }

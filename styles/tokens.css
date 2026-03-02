@@ -16,4 +16,7 @@
 
   /* Background aliases — CDS defines --background-primary, site uses --background-default */
   --background-default: var(--background-primary);
+
+  /* Overlay */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
 }

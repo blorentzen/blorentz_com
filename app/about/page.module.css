@@ -5,27 +5,41 @@
   padding-bottom: var(--spacing-64);
 }
 
-/* Intro */
+/* Hero */
 
-.intro {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: var(--spacing-48);
-  align-items: start;
-  padding-bottom: var(--spacing-48);
+.hero {
+  padding: var(--spacing-48) 0 var(--spacing-32);
 }
 
-.introText {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-16);
-}
-
-.lead {
-  font-size: var(--font-size-24);
-  color: var(--text-primary);
-  line-height: 1.4;
+.label {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-14);
   font-weight: 500;
+  color: var(--primary-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-8);
+}
+
+.title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-48);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.headline {
+  margin-top: var(--spacing-12);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 60ch;
+}
+
+.photoRow {
+  margin-bottom: var(--spacing-16);
 }
 
 .body {
@@ -34,67 +48,21 @@
   line-height: 1.7;
 }
 
-/* Narrow Content */
+/* Content Sections */
 
-.narrowContent {
+.contentSection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contentSection .body + .body {
+  margin-top: var(--spacing-16);
+}
+
+.narrative {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-16);
-}
-
-/* Timeline */
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-32);
-}
-
-.timelineItem {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: var(--spacing-24);
-  padding-bottom: var(--spacing-32);
-  border-bottom: 1px solid var(--border-default);
-}
-
-.timelineItem:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.timelineMeta {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-4);
-}
-
-.timelineCompany {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-18);
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.timelinePeriod {
-  font-family: var(--font-family-technical);
-  font-size: var(--font-size-12);
-  color: var(--text-tertiary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.timelineContent {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-8);
-}
-
-.timelineRole {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-16);
-  font-weight: 500;
-  color: var(--text-primary);
 }
 
 /* Values */
@@ -105,29 +73,11 @@
   gap: var(--spacing-24);
 }
 
-.valueCard {
-  padding: var(--spacing-24);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-12);
-}
-
-.valueTitle {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-18);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-8);
-}
-
-.valueDescription {
-  font-size: var(--font-size-14);
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
 /* CTA */
 
 .cta {
+  max-width: 800px;
+  margin: 0 auto;
   padding: var(--spacing-48) 0;
   border-top: 1px solid var(--border-default);
 }
@@ -186,22 +136,16 @@
     padding-bottom: var(--spacing-48);
   }
 
-  .intro {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-24);
+  .hero {
+    padding: var(--spacing-32) 0 var(--spacing-24);
   }
 
-  .introImage {
-    max-width: 200px;
+  .title {
+    font-size: var(--font-size-32);
   }
 
-  .lead {
-    font-size: var(--font-size-20);
-  }
-
-  .timelineItem {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-8);
+  .headline {
+    font-size: var(--font-size-18);
   }
 
   .values {

@@ -1,0 +1,99 @@
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+:global(html:not(.dark)) .aurora {
+  opacity: 0.25;
+}
+
+.blob1,
+.blob2,
+.blob3 {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+/* Primary — Empac blue */
+.blob1 {
+  width: 50%;
+  height: 120%;
+  top: -30%;
+  left: -10%;
+  background: radial-gradient(
+    circle at center,
+    rgba(14, 117, 193, 0.8) 0%,
+    rgba(14, 117, 193, 0) 70%
+  );
+  animation: drift1 18s ease-in-out infinite alternate;
+}
+
+/* Secondary — teal shift */
+.blob2 {
+  width: 45%;
+  height: 100%;
+  top: -20%;
+  right: -5%;
+  background: radial-gradient(
+    circle at center,
+    rgba(6, 182, 212, 0.7) 0%,
+    rgba(6, 182, 212, 0) 70%
+  );
+  animation: drift2 22s ease-in-out infinite alternate;
+}
+
+/* Accent — subtle violet */
+.blob3 {
+  width: 40%;
+  height: 80%;
+  bottom: -20%;
+  left: 30%;
+  background: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.6) 0%,
+    rgba(99, 102, 241, 0) 70%
+  );
+  animation: drift3 26s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(8%, 12%) scale(1.1);
+  }
+  100% {
+    transform: translate(-5%, 8%) scale(0.95);
+  }
+}
+
+@keyframes drift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-10%, 6%) scale(1.05);
+  }
+  100% {
+    transform: translate(6%, -8%) scale(1.1);
+  }
+}
+
+@keyframes drift3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12%, -10%) scale(1.08);
+  }
+  100% {
+    transform: translate(-8%, 5%) scale(0.98);
+  }
+}

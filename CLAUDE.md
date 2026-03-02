@@ -133,18 +133,19 @@ These are the CDS tokens used most frequently. Always reference these rather tha
 - `--shadow-sm`, `--shadow-md`, `--shadow-lg`
 - `--transition-fast`, `--transition-normal`
 
-## Case Studies at Launch
+## Case Studies at Launch (7 entries)
 
-1. T-Mobile Savings Calculator — Fortune 500 interactive tool at scale
-2. Olympic Energy Oil Tank Calculator — Custom tool for service business (Empac proof)
-3. Dr. Tarak Patel Website Redesign — $500K+ revenue impact
-4. T-Mobile Super Bowl Landing Page — High-stakes execution
-5. CascadeDS — Design system (this site runs on it)
-6. Sidecar — Full-stack retainer management platform
+1. T-Mobile Savings Calculator — Fortune 500 interactive tool at scale (voice: product)
+2. Olympic Energy Oil Tank Calculator — Custom tool, measurable impact (voice: product)
+3. Dr. Tarak Patel Custom Website Build — $500K+ revenue impact (voice: build)
+4. T-Mobile Super Bowl Landing Page — High-stakes execution (voice: build)
+5. FN5GL — Million-dollar sweepstakes for high school football (voice: strategy)
+6. CascadeDS — Design system, this site runs on it (voice: build)
+7. Sidecar — Full-stack retainer management platform, in progress (voice: build)
 
 ## Build Phases
 
-- **Phase 1 (current):** Core pages — homepage, /work (6 case studies), /about, /colophon
+- **Phase 1 (current):** Core pages — homepage, /work (7 case studies), /about, /colophon
 - **Phase 2:** /empac bridge page with Cal.com, /thoughts section, additional polish
 - **Phase 3:** Interactive demos, RSS, /uses page, performance optimization
 
@@ -173,3 +174,7 @@ Confident expert with zero pretension. Direct, not flowery. Results-focused. Fir
 - General Sans is loaded via `next/font/local` (self-hosted from Fontshare)
 - Space Grotesk, JetBrains Mono, Inter loaded via `next/font/google`
 - Font CSS variables are applied on `<body>` in root layout
+
+## Content Rules
+
+- **Never use "service businesses" in copy.** Use "established businesses" or just "businesses." Industry-specific verticals (HVAC, medical, etc.) only appear on empac.co service pages, never on blorentz.com.

@@ -29,6 +29,17 @@
   color: var(--primary-500);
 }
 
+.logoImage {
+  display: block;
+  height: 36px;
+  width: auto;
+  transition: filter var(--transition-fast);
+}
+
+:global(html.dark) .logoImage {
+  filter: invert(1);
+}
+
 .desktopLinks {
   display: flex;
   gap: var(--spacing-32);
@@ -52,8 +63,7 @@
   color: var(--text-primary);
 }
 
-.navLink.active::after {
-  content: "";
+.activeUnderline {
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -93,7 +103,7 @@
   inset: 0;
   top: var(--header-height);
   z-index: var(--z-dropdown);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--overlay-dark);
 }
 
 .mobileMenu {

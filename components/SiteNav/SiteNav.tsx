@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { ThemeToggle, Icon, icons } from "@empac/cascadeds";
 import styles from "./SiteNav.module.css";
 
@@ -34,24 +36,44 @@ export function SiteNav() {
   }, [mobileOpen, closeMobile]);
 
   return (
-    <header className={styles.header}>
+    <motion.header
+      className={styles.header}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <nav className={styles.nav}>
         <Link href="/" className={styles.logo}>
-          Britton Lorentzen
+          <Image
+            src="https://cdn.empac.co/portfolio/images/blorentz-blk-logo.png"
+            alt="Britton Lorentzen"
+            width={210}
+            height={36}
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <div className={styles.desktopLinks}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`${styles.navLink} ${
-                pathname.startsWith(link.href) ? styles.active : ""
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`${styles.navLink} ${isActive ? styles.active : ""}`}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.span
+                    className={styles.activeUnderline}
+                    layoutId="nav-underline"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         <div className={styles.actions}>
@@ -91,6 +113,6 @@ export function SiteNav() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 }
