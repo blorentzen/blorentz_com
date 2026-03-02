@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "git config --global url.\"https://${GITHUB_TOKEN}@github.com/\".insteadOf \"ssh://git@github.com/\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
