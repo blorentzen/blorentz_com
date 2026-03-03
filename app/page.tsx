@@ -47,7 +47,7 @@ export default function Home() {
           <Reveal delay={0.8}>
             <div className={styles.viewAll}>
               <Link href="/work" className={styles.viewAllLink}>
-                View all projects
+                View all projects &rarr;
               </Link>
             </div>
           </Reveal>
