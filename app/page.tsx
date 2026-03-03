@@ -19,10 +19,10 @@ export default function Home() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className={styles.heroTagline}>
-            Strategic front-end engineering leader. I&apos;ve led teams at
-            T-Mobile and Apple, and now I run Empac — a boutique consultancy
-            where I bring that same Fortune 500 rigor to businesses that need
-            it most.
+            I lead front-end development at T-Mobile and run Empac, a
+            consultancy I started when I was 18. I love to build things that
+            drive results for businesses... whether they&apos;re interactive
+            tools, design systems, or custom websites and applications.
           </p>
         </Reveal>
         <Reveal delay={0.3}>

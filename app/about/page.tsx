@@ -102,9 +102,9 @@ export default function AboutPage() {
           <p className={styles.label}>About</p>
           <h1 className={styles.title}>Builder first, leader second.</h1>
           <p className={styles.headline}>
-            I build things that solve problems — from T-Mobile&apos;s
-            customer-facing tools used by millions, to custom solutions for
-            businesses through my consultancy, Empac.
+            I build things that solve problems, from T-Mobile&apos;s
+            customer-facing tools to custom applications for businesses
+            through Empac.
           </p>
         </header>
       </Reveal>
@@ -121,11 +121,10 @@ export default function AboutPage() {
             <div className={styles.narrative}>
             <Reveal>
               <p className={styles.body}>
-                I&apos;ve spent my career at the intersection of strategy and
-                execution, and I like it there. At T-Mobile, I lead creative
-                development for high-stakes digital experiences. Through Empac, I
-                bring that same thinking to established businesses who&apos;ve
-                outgrown what off-the-shelf tools can do for them.
+                At T-Mobile, I lead creative development for some of the
+                highest-stakes pages on T-Mobile.com. Through Empac, I do the
+                same thing for businesses that have outgrown what off-the-shelf
+                tools can do.
               </p>
             </Reveal>
             <Reveal>
@@ -145,12 +144,11 @@ export default function AboutPage() {
             </Reveal>
             <Reveal>
               <p className={styles.body}>
-                Racing didn&apos;t become a career, but it shaped everything that
-                came after. It taught me to commit to a line before you can see
-                where it goes. It taught me that preparation matters more than
-                talent. And it taught me that the gap between &ldquo;good
-                enough&rdquo; and &ldquo;great&rdquo; is usually a decision someone
-                was afraid to make.
+                Racing didn&apos;t become a career, but it shaped how I think.
+                Commit to a line before you can see where it goes. Preparation
+                matters more than talent. And the gap between &ldquo;good
+                enough&rdquo; and &ldquo;great&rdquo; is usually a decision
+                someone was afraid to make.
               </p>
             </Reveal>
             <Reveal>
@@ -172,12 +170,11 @@ export default function AboutPage() {
             </Reveal>
             <Reveal>
               <p className={styles.body}>
-                I started at T-Mobile as a design intern. Four roles and eight years
-                later, I lead creative development for some of their
-                highest-priority digital experiences — the savings calculator used
-                by millions of customers, FN5GL, Super Bowl landing pages, campaign
-                deal hubs, and the T-Mobile.com redesign. The work is fast,
-                high-stakes, and built for an audience of tens of millions.
+                I started at T-Mobile as a design intern. Four roles and eight
+                years later, I lead creative development for the savings
+                calculator, Super Bowl landing pages, Friday Night 5G Lights,
+                campaign deal hubs, and the T-Mobile.com redesign. The work
+                ships to tens of millions of people and moves fast.
               </p>
             </Reveal>
             <Reveal>
@@ -193,12 +190,13 @@ export default function AboutPage() {
             </Reveal>
             <Reveal>
               <p className={styles.body}>
-                I studied business at the University of Washington with a focus on
-                marketing, then supplemented it with several years of computer
-                science coursework. The combination of business strategy and
-                technical execution is the thing I keep coming back to — it&apos;s
-                what I do at T-Mobile, it&apos;s what I do at Empac, and it&apos;s
-                what I look for in every project I take on.
+                I started as a computer science major at UW. Two years in, I
+                went to Apple in California... and all the program managers I
+                worked with told me a business degree with a CS background is
+                more valuable than pure CS. So when I came back to Seattle, I
+                switched to business and marketing. Business strategy plus
+                technical execution, that&apos;s the thread that ties everything
+                I do together.
               </p>
             </Reveal>
             </div>
@@ -235,10 +233,12 @@ export default function AboutPage() {
               think about time differently than I used to.
             </p>
             <p className={styles.body}>
-              I still follow motorsports — the racing bug doesn&apos;t go away, it
-              just changes shape. I&apos;m into music production and DJing when I
-              find the time, and I&apos;ve traveled enough to know that the
-              Pacific Northwest is where I want to be.
+              I still follow motorsports, and also keep tabs on the folks
+              I&apos;ve personally raced with. I DJ and produce music as a way
+              to decompress from a hard day of work, and I love to travel with
+              the family when we have a moment to get away (we&apos;re already
+              planning a trip once my little girl is old enough to experience
+              Bippity Boppity Boutique at Disney!)
             </p>
           </Section>
         </div>

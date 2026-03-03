@@ -8,7 +8,7 @@ export const olympicEnergyCalculator: CaseStudy = {
   year: "Late 2024",
   role: "Sole Designer & Developer",
   order: 7,
-  headline: "15% bounce rate reduction, 2nd most visited page on the site",
+  headline: "15% bounce rate reduction, 2nd most visited page on the site.",
   heroImage: "https://cdn.empac.co/portfolio/images/oe-tank-calc-example-thumb.jpg",
   liveUrl: "https://www.olympicenergy.net/heating-oil-tank-calculator",
   videoUrl: "https://cdn.empac.co/portfolio/video/oe-oil-tank-calculator-example.mp4",
@@ -18,14 +18,14 @@ export const olympicEnergyCalculator: CaseStudy = {
     { stat: "3x", label: "Engagement rate increase" },
   ],
   techStack: ["HTML", "CSS", "Vanilla JavaScript"],
-  timeline: "Built and launched late 2024",
-  teamSize: "Solo",
+  timeline: "Built and launched late 2024.",
+  teamSize: "Solo.",
   problem:
-    "Olympic Energy is a heating oil company in the Pacific Northwest. Their staff was consistently bombarded with calls from customers trying to figure out how much oil was left in their tank. Customers didn't have an easy way to calculate their remaining supply, and some were running out of heating oil entirely because they couldn't gauge when to reorder. Every call took staff time, and the friction was pushing some customers to competitors who made ordering easier.\n\nAn employee of the company worked with the owner and me to identify the core problem: customers needed a simple way to measure their tank, calculate what was left, and make an ordering decision — without picking up the phone.",
+    "Olympic Energy is a heating oil company in the Pacific Northwest. They were getting buried in calls from customers trying to figure out how much oil was left in their tank. Customers had no easy way to check their remaining supply. Some were running out entirely because they couldn't tell when to reorder. Every call ate staff time, and the friction was pushing people to competitors.\n\nAn employee flagged it to the owner, the owner brought me in, and we zeroed in on the problem: customers needed a way to measure their tank and figure out what's left — without calling.",
   approach:
-    "The calculator is a two-step process. The first step uses a modal that walks homeowners through how to physically measure their tank — where to look, how to read the gauge, and what measurements to take. The second step takes those inputs and calculates the remaining oil volume.\n\nThe design was built mobile-first, because most customers are checking from their phone while standing next to their tank trying to read the gauge. The experience had to be dead simple — no account creation, no unnecessary steps, just the answer.\n\nLike the T-Mobile calculator, this was built with HTML, CSS, and Vanilla JavaScript — no frameworks. The tool needed to be lightweight, fast-loading, and easy to embed into the existing site without introducing dependencies that would complicate maintenance for a small business.",
+    "The calculator is a two-step process. The first step uses a modal that walks homeowners through how to physically measure their tank — where to look, how to read the gauge, and what measurements to take. The second step takes those inputs and calculates the remaining oil volume.\n\nMobile-first, because most people are checking from their phone while standing next to the tank trying to read the gauge. Had to be dead simple — no account, no extra steps, just the answer.\n\nBuilt with HTML, CSS, and Vanilla JS — no frameworks. Needed to be lightweight and easy to embed without adding dependencies that a small business would have to maintain.",
   result:
-    "15% reduction in bounce rate across the website after the calculator launched. 2nd most visited page on the site — an interactive tool outranking most static content pages. Over half of visits come from Google, meaning the calculator is driving organic search traffic the site never had before. Engagement rate boosted from 5-10% to 15-20% site-wide. Currently maintained via an ongoing monthly retainer.",
+    "15% drop in bounce rate after launch. The calculator became the 2nd most visited page on the site, beating out every other static page besides the home page. Over half the traffic comes from Google, driving organic search the site never had before. Site-wide engagement went from 5-10% up to 15-20%.",
   challenges: [
     "Designing a measurement flow that works for homeowners who have never looked at their oil tank gauge before",
     "Building a mobile-first experience for a use case that literally happens while standing next to the tank",

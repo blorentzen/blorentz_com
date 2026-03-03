@@ -20,7 +20,7 @@ export default function WorkPage() {
       <Reveal>
         <PageHeader
           title="Work"
-          subtitle="A mix of Fortune 500 digital products, client engagements, and things I've built for myself. Each one solved a real problem — the scale and context just varies."
+          subtitle="Corporate products, client work, and things I've built for myself. The same amount of thought and care goes into each product and experience I work on."
         />
       </Reveal>
       <StaggerGrid className={styles.grid}>
