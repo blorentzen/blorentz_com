@@ -159,7 +159,7 @@ export default function AboutPage() {
                 even helped out a local BMX team, Ride and Glide, earn a feature
                 on King 5 with Paul Silvi. Once I was done with action sports,
                 Emerald Pacific became Empac: a consultancy that builds custom
-                solutions and guided small businesses with their marketing needs.
+                solutions and guides established businesses with their marketing needs.
               </p>
             </Reveal>
             <Reveal>
