@@ -158,7 +158,7 @@ export default function AboutPage() {
                 Pacific Northwest get noticed by sponsors. Some of those videos
                 even helped out a local BMX team, Ride and Glide, earn a feature
                 on King 5 with Paul Silvi. Once I was done with action sports,
-                Emerald Pacific became Empac: a consultancy that built custom
+                Emerald Pacific became Empac: a consultancy that builds custom
                 solutions and guided small businesses with their marketing needs.
               </p>
             </Reveal>
