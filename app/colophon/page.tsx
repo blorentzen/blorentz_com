@@ -110,10 +110,6 @@ export default function ColophonPage() {
             verified in light. Both themes use the same token system.
           </li>
           <li className={styles.principle}>
-            <strong>No Tailwind.</strong> CSS Modules with design tokens.
-            Styles are co-located with components.
-          </li>
-          <li className={styles.principle}>
             <strong>Server-first.</strong> Every page is a server component.
             Client code only where interaction requires it.
           </li>
