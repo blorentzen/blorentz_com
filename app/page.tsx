@@ -19,7 +19,7 @@ export default function Home() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className={styles.heroTagline}>
-            I lead front-end development at T-Mobile and run Empac, a
+            I lead front-end development at T‑Mobile and run Empac, a
             consultancy I started when I was 18. I love to build things that
             drive results for businesses... whether they&apos;re interactive
             tools, design systems, or custom websites and applications.

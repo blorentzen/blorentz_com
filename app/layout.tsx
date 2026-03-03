@@ -51,6 +51,11 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <script
+          defer
+          data-domain="blorentz.com"
+          src="https://plausible.io/js/script.js"
+        />
       </head>
       <body
         className={`${generalSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable}`}
