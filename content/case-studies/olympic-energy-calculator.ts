@@ -18,8 +18,8 @@ export const olympicEnergyCalculator: CaseStudy = {
     { stat: "3x", label: "Engagement rate increase" },
   ],
   techStack: ["HTML", "CSS", "Vanilla JavaScript"],
-  timeline: "Built and launched late 2024.",
-  teamSize: "Solo.",
+  timeline: "Built and launched late 2024",
+  teamSize: "Solo",
   problem:
     "Olympic Energy is a heating oil company in the Pacific Northwest. They were getting buried in calls from customers trying to figure out how much oil was left in their tank. Customers had no easy way to check their remaining supply. Some were running out entirely because they couldn't tell when to reorder. Every call ate staff time, and the friction was pushing people to competitors.\n\nAn employee flagged it to the owner, the owner brought me in, and we zeroed in on the problem: customers needed a way to measure their tank and figure out what's left without needing to call a rep.",
   approach:
@@ -27,8 +27,8 @@ export const olympicEnergyCalculator: CaseStudy = {
   result:
     "15% drop in bounce rate after launch. The calculator became the 2nd most visited page on the site, beating out every other static page besides the home page. Over half the traffic comes from Google, driving organic search the site never had before. Site-wide engagement went from 5-10% up to 15-20%.",
   challenges: [
-    "Designing a measurement flow that works for homeowners who have never looked at their oil tank gauge before",
-    "Building a mobile-first experience for a use case that literally happens while standing next to the tank",
-    "Keeping the tool lightweight and dependency-free for a small business website",
+    "Designing a measurement flow that works for homeowners who have never looked at their oil tank gauge before.",
+    "Building a mobile-first experience for a use case that literally happens while standing next to the tank.",
+    "Keeping the tool lightweight and dependency-free for a small business website.",
   ],
 };

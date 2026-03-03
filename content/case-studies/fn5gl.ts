@@ -19,8 +19,8 @@ export const fn5gl: CaseStudy = {
     { stat: "$1M+", label: "Grand prize value" },
   ],
   techStack: ["HTML", "CSS", "Vanilla JavaScript", "Vite"],
-  timeline: "2025 (Season 2).",
-  teamSize: "Technical Lead — hired/guided contractor, coordinated with external API agency.",
+  timeline: "2025 (Season 2)",
+  teamSize: "Technical Lead — hired/guided contractor, coordinated with external API agency",
   problem:
     "Friday Night 5G Lights is a massive T‑Mobile program. National sweepstakes, thousands of high schools competing for a $1M+ prize package... including a field makeover, Gronk Fitness gym equipment from Rob Gronkowski, trip to the SEC Championship, and all the things that a small, local high school would love for their football program. The 2025 season was the program's second year, and the biggest challenge was bringing the majority of functionality in-house.\n\nYear 1 was mostly handled by external agencies. For Year 2, the goal was to bring the core experience in-house: dynamic leaderboard, interactive school map, school directory, and all the animations... built to properly run in AEM. That meant coordinating with the agencies that still owned the data while we built the front-end internally.",
   approach:
@@ -28,10 +28,10 @@ export const fn5gl: CaseStudy = {
   result:
     "2,000+ schools applied across 48 states. 8M+ votes cast. 450 schools took home $5K through the weekly sweepstakes, 25 finalists got $25K each, and Dierks High School in Arkansas won the whole thing. Prize package worth over $1 million.\n\nEvery dynamic component (leaderboard, map, directory, voting) built in-house and running in AEM. Program renewed for 2026.",
   challenges: [
-    "Bringing the entire front-end in-house from external agencies while maintaining program continuity",
-    "Coordinating data APIs across multiple external partners and integrating into AEM's constraints",
-    "Building custom animations and visual identity for a program that needed to feel distinct from standard T‑Mobile pages",
-    "Absorbing the full build when the contractor departed at 60-70% completion",
-    "Planning API sunset and data migration strategy so content persists beyond the active season",
+    "Bringing the entire front-end in-house from external agencies while maintaining program continuity.",
+    "Coordinating data APIs across multiple external partners and integrating into AEM's constraints.",
+    "Building custom animations and visual identity for a program that needed to feel distinct from standard T‑Mobile pages.",
+    "Absorbing the full build when the contractor departed at 60-70% completion.",
+    "Planning API sunset and data migration strategy so content persists beyond the active season.",
   ],
 };

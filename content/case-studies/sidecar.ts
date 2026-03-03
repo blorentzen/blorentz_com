@@ -13,8 +13,8 @@ export const sidecar: CaseStudy = {
   videoUrl: "https://cdn.empac.co/portfolio/video/sidecar-demo.mp4",
   status: "in-progress",
   techStack: ["React", "Node.js", "Supabase", "CascadeDS", "Stripe"],
-  timeline: "2025 – Present (active development, pre-launch).",
-  teamSize: "Solo.",
+  timeline: "2025 – Present (active development, pre-launch)",
+  teamSize: "Solo",
   problem:
     "Every dashboard looks the same. They've all been A/B tested into the same design. Meanwhile, retainer-based consulting is a completely different operating model than project work, and nothing out there accounts for it. You're not tracking tasks toward a deadline. You're managing ongoing hour allocations across rotating focus areas, communicating with clients about what's happening this cycle, tracking utilization, and making sure nothing falls through the cracks month over month.\n\nThe tools that exist (Asana, Monday, Basecamp) are built for project teams. They're either too heavy (enterprise features nobody asked for) or too light (glorified to-do lists). None of them are designed for solo operators or small teams managing multiple client retainers simultaneously.\n\nSidecar is what I'm building to fix it. A dashboard for companies that run on rotating retainers, built to challenge the assumption that every dashboard has to look and work the same.",
   approach:
@@ -22,10 +22,10 @@ export const sidecar: CaseStudy = {
   result:
     "Not live yet. The plan is to get Sidecar managing Empac's own retainer operations first, then run usability testing before opening it up. If it works for me, the question is whether other solo operators and small consultancies would want it too.",
   challenges: [
-    "Designing a multi-tenant data model with strict client data isolation via Row Level Security",
-    "Challenging the assumption that dashboards all need to look the same, finding a more elegant approach without sacrificing usability",
-    "Building real-time features (chat, notifications, live updates) alongside traditional CRUD operations",
+    "Designing a multi-tenant data model with strict client data isolation via Row Level Security.",
+    "Challenging the assumption that dashboards all need to look the same, finding a more elegant approach without sacrificing usability.",
+    "Building real-time features (chat, notifications, live updates) alongside traditional CRUD operations.",
     "Balancing feature scope against shipping an MVP. The feature list is deep but the priority is getting the core loop working first.",
-    "Designing a two-way file system and secure credential storage that meets real security requirements",
+    "Designing a two-way file system and secure credential storage that meets real security requirements.",
   ],
 };

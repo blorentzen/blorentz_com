@@ -18,8 +18,8 @@ export const drPatelRedesign: CaseStudy = {
     { stat: "22.6%", label: "Engagement rate" },
   ],
   techStack: ["EmpacJS", "HTML", "CSS", "Vanilla JavaScript", "Plausible Analytics"],
-  timeline: "Mid-to-late 2023 (launched) → late 2024 (handed off to new agency).",
-  teamSize: "Solo.",
+  timeline: "Mid-to-late 2023 (launched) → late 2024 (handed off to new agency)",
+  teamSize: "Solo",
   problem:
     "Dr. Tarak Patel is a double board-certified plastic surgeon based out of the Pacific Northwest. He had one major issue: people calling the practice he worked at were being routed to other surgeons instead of him... even when they specifically wanted Dr. Patel. The practice's internal call routing wasn't funneling prospective patients to the right surgeon, so he was losing consultations he should have been getting. On top of that, he didn't have a website he could call his own. Without a personal digital presence, there was no way for prospects to bypass the practice's broken funnel and come to him directly.\n\nIn elective procedures, the website is essentially the first consultation. Patients look at credentials, before-and-afters, and reviews before they'll even pick up the phone. Without his own site, every prospect went through the practice... where the routing problem kept costing him business.",
   approach:
@@ -33,8 +33,8 @@ export const drPatelRedesign: CaseStudy = {
     role: "Double Board-Certified Plastic Surgeon",
   },
   challenges: [
-    "Building personalization without a server-side framework, using client-side JS web components and URL parameters to create a guided prospect journey",
-    "Designing interactive gallery and testimonial modules that generated trackable behavioral data while feeling natural to patients",
+    "Building personalization without a server-side framework, using client-side JS web components and URL parameters to create a guided prospect journey.",
+    "Designing interactive gallery and testimonial modules that generated trackable behavioral data while feeling natural to patients.",
     "Creating a digital presence credible enough for a double board-certified surgeon. Every detail had to communicate expertise and trust.",
   ],
 };
