@@ -44,13 +44,11 @@ export default function Home() {
               <CaseStudyCard key={study.slug} study={study} />
             ))}
           </StaggerGrid>
-          <Reveal delay={0.8}>
-            <div className={styles.viewAll}>
-              <Link href="/work" className={styles.viewAllLink}>
-                View all projects &rarr;
-              </Link>
-            </div>
-          </Reveal>
+          <div className={styles.viewAll}>
+            <Link href="/work" className={styles.viewAllLink}>
+              View all projects &rarr;
+            </Link>
+          </div>
         </Section>
       </Reveal>
 
