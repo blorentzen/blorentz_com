@@ -253,9 +253,10 @@ export default function AboutPage() {
         <section className={styles.cta}>
         <h2 className={styles.ctaHeading}>Want to see the work?</h2>
         <p className={styles.body}>
-          I take on a limited number of engagements at a time through Empac. If
-          you&apos;re curious about what that looks like, start with the work
-          or head to Empac to learn more.
+          I&apos;ve worked on quite a few high profile projects over the years.
+          On the side, I also take on a limited number of engagements through
+          Empac. Whether you&apos;re here for the corporate work or for a look
+          into Empac, there&apos;s sure to be something here for you.
         </p>
         <div className={styles.ctaLinks}>
           <Link href="/work" className={styles.ctaLinkPrimary}>
