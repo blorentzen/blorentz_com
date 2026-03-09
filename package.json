@@ -12,6 +12,7 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
     "@empac/cascadeds": "https://github.com/blorentzen/cascadeds.git",
+    "@next/third-parties": "^16.1.6",
     "framer-motion": "^12.33.0",
     "next": "16.1.6",
     "react": "19.2.3",

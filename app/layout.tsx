@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { generalSans, spaceGrotesk, jetbrainsMono, inter } from "@/lib/fonts";
 import { ThemeScript } from "@/components/ThemeScript";
 import { LayoutShell } from "@/components/LayoutShell";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -56,6 +57,7 @@ export default function RootLayout({
           data-domain="blorentz.com"
           src="https://plausible.io/js/script.js"
         />
+        <GoogleAnalytics gaId="G-Y1WB7RGG4M" />
       </head>
       <body
         className={`${generalSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable}`}
