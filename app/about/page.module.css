@@ -39,7 +39,16 @@
 }
 
 .photoRow {
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-32);
+}
+
+.tabsWrapper :global(.empac-tabs__header) {
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: var(--spacing-16);
+}
+
+.tabsWrapper :global(.empac-tabs__content) {
+  padding-top: var(--spacing-32);
 }
 
 .body {
@@ -77,7 +86,7 @@
 
 .cta {
   max-width: 800px;
-  margin: 0 auto;
+  margin: var(--spacing-48) auto 0;
   padding: var(--spacing-48) 0;
   border-top: 1px solid var(--border-default);
 }
@@ -128,6 +137,123 @@
   border-color: var(--primary-500);
 }
 
+/* Off the Clock */
+
+.offClockIntro {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-32);
+  font-style: italic;
+}
+
+.offClockSection {
+  margin-bottom: var(--spacing-48);
+}
+
+.offClockSection .body + .body {
+  margin-top: var(--spacing-16);
+}
+
+.offClockHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-16);
+}
+
+.offClockImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--background-sunken);
+  border-radius: var(--radius-12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  margin-bottom: var(--spacing-16);
+}
+
+.racingVideos {
+  margin-top: var(--spacing-24);
+}
+
+/* Off the Clock — Images */
+
+.offClockImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-12);
+  margin-bottom: var(--spacing-16);
+}
+
+/* Embeds */
+
+.embedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-16);
+  margin-top: var(--spacing-24);
+}
+
+.embedWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.embed {
+  border: none;
+  border-radius: var(--radius-8);
+}
+
+.embedCaption {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-8);
+  line-height: 1.5;
+}
+
+.videoEmbed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+}
+
+.videoEmbed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoEmbedFull {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  margin-bottom: var(--spacing-16);
+}
+
+.videoEmbedFull iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -159,5 +285,9 @@
   .ctaLinks {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .embedGrid {
+    grid-template-columns: 1fr;
   }
 }
