@@ -87,14 +87,6 @@ function FullStoryTab() {
         <div className={styles.narrative}>
           <Reveal>
             <p className={styles.body}>
-              At T&#x2011;Mobile, I lead creative development for some of the
-              most visible pages on T&#x2011;Mobile.com. Through Empac, I build
-              custom websites and tools for businesses that have outgrown what
-              off-the-shelf tools can do for them.
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className={styles.body}>
               Before any of that, I was a racing kid who taught himself how to
               design and code so I could create my own website and brand for the
               racing team.
