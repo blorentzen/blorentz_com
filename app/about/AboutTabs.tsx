@@ -260,7 +260,7 @@ function OffTheClockTab() {
         <p className={styles.body}>
           I started karting when I was 12, and won the karting grand nationals
           by the time I was 15. I was also one of the youngest drivers invited
-          to the Red Bull Driver Search. Before the 2008/2009 crash happened, I
+          to the Red Bull Driver Search. Before the 2008/2009 economic crash, I
           was racing 360 sprint cars on the asphalt and a stock car at South
           Sound Speedway.
         </p>
