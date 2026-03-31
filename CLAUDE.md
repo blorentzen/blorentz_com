@@ -10,7 +10,7 @@ blorentz.com is the personal brand hub for Britton Lorentzen. It connects his Fo
 - **Design System:** CascadeDS (`@empac/cascadeds`) with site-specific token extensions
 - **Styling:** CSS Modules + CDS design tokens. **NO TAILWIND.**
 - **Animation:** Framer Motion
-- **Content:** Structured TypeScript for case studies, MDX for thoughts/articles
+- **Content:** Structured TypeScript for case studies, Markdown for blog posts, MDX for thoughts/articles
 - **Scheduling:** Cal.com (`@calcom/embed-react`)
 - **Deployment:** Vercel
 - **Analytics:** Plausible
@@ -79,6 +79,9 @@ This site uses a deliberate three-font system. Each font has specific usage rule
 - Case studies are structured TypeScript in `content/case-studies/`
 - Each case study follows the narrative structure: Problem → Approach → Result → Details
 - Case study images go in `public/images/work/[slug]/`
+- Blog posts are Markdown with frontmatter in `content/blog/`
+- Blog images are hosted on `cdn.empac.co/portfolio/images/blog/`
+- Blog supports HTML passthrough for `<figure>`, comparison blocks, and custom markup
 - Thoughts/articles are MDX in `content/thoughts/` (Phase 2)
 
 ## Project Structure
@@ -88,20 +91,22 @@ app/                     Next.js App Router pages
   layout.tsx             Root layout — nav, footer, theme, fonts
   page.tsx               Homepage
   work/                  Case studies
+  blog/                  Blog index + individual posts
   about/                 Personal story
   empac/                 Consultancy bridge (Cal.com embed)
   thoughts/              Articles (Phase 2)
   colophon/              Site credits & tech stack
 components/              Shared React components + CSS Modules
 content/
+  blog/                  Markdown blog posts with frontmatter
   case-studies/          Structured TS data per project
   thoughts/              MDX posts (Phase 2)
 styles/
   tokens.css             Site-specific token overrides (extends CDS)
   globals.css            Global styles, CDS imports, font faces
 lib/
+  blog.ts                Blog content loader (gray-matter + remark)
   fonts.ts               next/font config (General Sans, Space Grotesk, JetBrains Mono, Inter)
-  content.ts             Content loading utilities
   utils.ts               Shared helpers
 public/images/           Static assets organized by section
 ```
@@ -145,7 +150,8 @@ These are the CDS tokens used most frequently. Always reference these rather tha
 
 ## Build Phases
 
-- **Phase 1 (current):** Core pages — homepage, /work (7 case studies), /about, /colophon
+- **Phase 1 (complete):** Core pages — homepage, /work (7 case studies), /about, /colophon
+- **Phase 1.5 (current):** /blog with markdown posts, hero post layout, comparison blocks
 - **Phase 2:** /empac bridge page with Cal.com, /thoughts section, additional polish
 - **Phase 3:** Interactive demos, RSS, /uses page, performance optimization
 
@@ -159,7 +165,14 @@ Confident expert with zero pretension. Direct, not flowery. Results-focused. Fir
 
 1. Create directory in `app/[page-name]/`
 2. Add `page.tsx` and `page.module.css`
-3. Add nav link in `components/Nav.tsx`
+3. Add nav link in `components/SiteNav/SiteNav.tsx`
+
+### Adding a blog post
+
+1. Create `content/blog/[slug].md` with frontmatter (title, slug, date, description, readTime, heroImage, heroAlt, published)
+2. Write post body in Markdown — supports HTML passthrough for `<figure>` with captions and comparison blocks
+3. Host images on `cdn.empac.co/portfolio/images/blog/[post-slug]/`
+4. The latest post by date automatically becomes the hero on the blog index
 
 ### Adding a case study
 

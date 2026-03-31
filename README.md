@@ -14,7 +14,7 @@ Built with [Next.js](https://nextjs.org), styled with [CascadeDS](https://empac.
 | Design System | CascadeDS (`@empac/cascadeds`) with site-specific token extensions |
 | Styling       | CSS Modules + CDS design tokens (no Tailwind)                      |
 | Animation     | Framer Motion                                                      |
-| Content       | Structured TypeScript (case studies)                               |
+| Content       | Structured TypeScript (case studies), Markdown (blog)              |
 | Fonts         | General Sans · Space Grotesk · JetBrains Mono · Inter              |
 | Deployment    | Vercel                                                             |
 
@@ -44,6 +44,10 @@ blorentz.com/
 │   │   ├── page.tsx              Work index (case study listing)
 │   │   └── [slug]/
 │   │       └── page.tsx          Individual case study
+│   ├── blog/
+│   │   ├── page.tsx              Blog index (hero post + card grid)
+│   │   └── [slug]/
+│   │       └── page.tsx          Individual blog post
 │   ├── about/
 │   │   └── page.tsx              Personal story & background
 │   └── colophon/
@@ -67,6 +71,7 @@ blorentz.com/
 │   ├── ValueCard/                Values display card
 │   └── VideoPlayer/              Video player with poster
 ├── content/
+│   ├── blog/                     Blog posts (Markdown with frontmatter)
 │   └── case-studies/             Structured case study data (.ts files)
 │       ├── index.ts              Case study registry & types
 │       ├── tmobile-savings-calculator.ts
@@ -80,6 +85,7 @@ blorentz.com/
 │   ├── tokens.css                blorentz.com token overrides (extends CDS)
 │   └── globals.css               Global styles, CDS imports, font declarations
 ├── lib/
+│   ├── blog.ts                   Blog content loader (gray-matter + remark)
 │   ├── fonts.ts                  next/font configuration
 │   └── utils.ts                  Shared utilities
 ├── CLAUDE.md                     Claude Code project context
@@ -122,6 +128,14 @@ Open [http://localhost:3000](http://localhost:3000).
 - Use CDS token variables (`var(--spacing-16)`, `var(--text-primary)`, etc.) — never hardcode values
 - The `--font-family-technical` token is custom to this project (not in CDS base)
 - See `styles/tokens.css` for all site-specific overrides
+
+### Adding a Blog Post
+
+1. Create a new `.md` file in `content/blog/` named with the post slug
+2. Add frontmatter: `title`, `slug`, `date`, `description`, `readTime`, `heroImage`, `heroAlt`, `published`
+3. Write post body in Markdown (supports HTML for figures, comparison blocks)
+4. Hero images are hosted on `cdn.empac.co/portfolio/images/blog/`
+5. The latest post (by date, then slug) automatically becomes the hero on `/blog`
 
 ### Adding a Case Study
 

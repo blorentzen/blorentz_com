@@ -1,0 +1,239 @@
+.page {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+  padding-bottom: var(--spacing-64);
+}
+
+/* Hero / Latest Post */
+
+.heroCard {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  margin-bottom: var(--spacing-48);
+}
+
+.heroCard:hover .heroImg {
+  transform: scale(1.02);
+}
+
+.heroCard:hover .heroCta {
+  opacity: 1;
+}
+
+.heroImage {
+  position: relative;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.heroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.heroDate,
+.heroDot,
+.heroReadTime {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.heroTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-36);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.heroDescription {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  max-width: 50ch;
+}
+
+.heroCta {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: #fff;
+  margin-top: var(--spacing-4);
+  opacity: 0.85;
+  transition: opacity var(--transition-fast);
+}
+
+/* Post Cards */
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-32);
+}
+
+.postCard {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-24);
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+}
+
+.postCard:hover .postImg {
+  transform: scale(1.02);
+}
+
+.postImage {
+  border-radius: var(--radius-12);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.postImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-4) 0;
+}
+
+.postTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.postMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
+}
+
+.postDate {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+}
+
+.postDot {
+  color: var(--text-tertiary);
+  font-size: var(--font-size-14);
+}
+
+.postReadTime {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+}
+
+.postDescription {
+  margin-top: var(--spacing-8);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.postCta {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: var(--spacing-12);
+  transition: color var(--transition-fast);
+}
+
+.postCard:hover .postCta {
+  color: var(--primary-500);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0 var(--spacing-16);
+    padding-bottom: var(--spacing-48);
+  }
+
+  .heroCard {
+    margin-bottom: var(--spacing-32);
+  }
+
+  .heroContent {
+    padding: var(--spacing-24);
+  }
+
+  .heroTitle {
+    font-size: var(--font-size-24);
+  }
+
+  .heroDescription {
+    font-size: var(--font-size-14);
+  }
+
+  .posts {
+    gap: var(--spacing-24);
+  }
+
+  .postCard {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-12);
+  }
+
+  .postTitle {
+    font-size: var(--font-size-20);
+  }
+}
