@@ -25,7 +25,7 @@ And honestly, I think we're getting to a place where we need to start challengin
 
 Here's a challenge I've identified in today's viewpoint on design systems: product systems and marketing systems serve very different purposes, and they don't typically play nice together.
 
-Product (functional) design systems are all about consistency and predictability… every button looks the same across 50 screens, and that's the point so the user can clearly identify patterns. Think Salesforce Lightning, Material Design, Shopify Polaris.. All these systems enforce sameness because users need to know exactly what to expect when they're trying to buy things, interact with your apps, and so on.
+Product (functional) design systems are all about consistency and predictability… every button looks the same across 50 screens, and that's the point so the user can clearly identify patterns. Think Salesforce Lightning, Material Design, Shopify Polaris... All these systems enforce sameness because users need to know exactly what to expect when they're trying to buy things, interact with your apps, and so on.
 
 Marketing (experiential) design systems are the polar opposite. Every campaign page begs to be expressive, flexible, visually impactful, and all typically look completely different from the other one. The design system might provide guardrails, but the whole point is that things can breathe and be unique from one another.
 
@@ -120,6 +120,4 @@ Code Connect is the next milestone: linking Figma components directly to their c
 
 The system will naturally grow as the projects grow. Every new application that consumes CDS makes it better, and every fix flows back to everything that came before it. That's what I believe is the beauty of building a system like this… the investment pays compound interest over time.
 
-Next post will go into very different territory: the savings calculator at T-Mobile. What it looks like to build interactive tools inside a Fortune 500 company with regulatory constraints, legal reviews, and tens of millions of users. It's a different kind of building, but the same core principle applies: understand the problem deeply before you start building the solution.
-
-I'll be seeing you in that one.
+Next post will shift gears a bit. Claude and Claude Code aren't the only AI tools in my workflow, and I think you'll appreciate how I've been using other platforms to push creative boundaries in ways that have nothing to do with writing code. I'll be seeing you in that one soon.
