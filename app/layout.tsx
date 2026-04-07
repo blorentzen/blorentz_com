@@ -58,6 +58,12 @@ export default function RootLayout({
           src="https://plausible.io/js/script.js"
         />
         <GoogleAnalytics gaId="G-Y1WB7RGG4M" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Britton Lorentzen's Blog"
+          href="/blog/rss.xml"
+        />
       </head>
       <body
         className={`${generalSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} ${inter.variable}`}

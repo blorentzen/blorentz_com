@@ -6,6 +6,7 @@ description: "Everything built with AI is starting to look the same. I built my 
 readTime: "8 min read"
 heroImage: "https://cdn.empac.co/portfolio/images/blog/intro-post/8-bit-britton-looking-out-at-thriving-world.jpg"
 heroAlt: "16-bit pixel art of a small figure overlooking a vast thriving world with modern architecture and lush vegetation"
+category: "building"
 published: true
 ---
 

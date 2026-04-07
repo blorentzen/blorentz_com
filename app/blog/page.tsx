@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
+
+export const revalidate = 3600;
 import { PageHeader } from "@/components/PageHeader/PageHeader";
 import { Reveal } from "@/components/Reveal/Reveal";
+import { EmailSubscribe } from "@/components/EmailSubscribe/EmailSubscribe";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -33,7 +36,12 @@ export default function BlogPage() {
   return (
     <div className={styles.page}>
       <Reveal>
-        <PageHeader title="Blog" />
+        <div className={styles.blogHeader}>
+          <PageHeader title="Blog" />
+          <a href="/blog/rss.xml" className={styles.rssLink} target="_blank" rel="noopener noreferrer">
+            RSS
+          </a>
+        </div>
       </Reveal>
 
       {latestPost && (
@@ -105,6 +113,8 @@ export default function BlogPage() {
           ))}
         </div>
       )}
+
+      <EmailSubscribe />
     </div>
   );
 }

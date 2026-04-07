@@ -5,6 +5,31 @@
   padding-bottom: var(--spacing-64);
 }
 
+.blogHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.rssLink {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--spacing-4) var(--spacing-8);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-4);
+  margin-top: var(--spacing-48);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.rssLink:hover {
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+}
+
 /* Hero / Latest Post */
 
 .heroCard {

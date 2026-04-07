@@ -6,6 +6,7 @@ description: "If you work in creative or development, you've probably had the sa
 readTime: "4 min read"
 heroImage: "https://cdn.empac.co/portfolio/images/blog/intro-post/8-bit-britton-looking-out-at-city-in-pacific-northwest.jpg"
 heroAlt: "16-bit pixel art of a small figure looking out at a Pacific Northwest cityscape through modern glass architecture"
+category: "perspective"
 published: true
 ---
 

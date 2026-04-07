@@ -6,6 +6,7 @@ description: "I rebuilt my portfolio from the ground up using Figma, Claude.ai, 
 readTime: "8 min read"
 heroImage: "https://cdn.empac.co/portfolio/images/blog/intro-post/8-bit-britton-and_claude-looking-out-at-pacific-northwest-environment.jpg"
 heroAlt: "16-bit pixel art of two small figures on a platform looking out at a vast Pacific Northwest landscape with a glowing beam of light"
+category: "building"
 published: true
 ---
 

@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getPost, getPostSlugs, getAdjacentPosts } from "@/lib/blog";
+import { EmailSubscribe } from "@/components/EmailSubscribe/EmailSubscribe";
+
+export const revalidate = 3600;
 import { Reveal } from "@/components/Reveal/Reveal";
 import styles from "./page.module.css";
 
@@ -92,7 +95,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       </Reveal>
 
-      <div className={styles.divider} />
+      <EmailSubscribe />
 
       <nav className={styles.postNav}>
         {prev ? (

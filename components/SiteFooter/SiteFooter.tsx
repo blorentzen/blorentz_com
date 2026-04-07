@@ -22,7 +22,7 @@ export function SiteFooter() {
           icon: <Icon icon={icons.BrandLinkedin} size="20" />,
         },
       ]}
-      copyright={`\u00A9 ${currentYear} Britton Lorentzen`}
+      copyright={`\u00A9 ${currentYear} Britton Lorentzen \u00B7 Britton@empac.co`}
       bottomLinks={[
         { href: "/work", label: "Work" },
         { href: "/about", label: "About" },
