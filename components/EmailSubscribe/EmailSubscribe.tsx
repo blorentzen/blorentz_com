@@ -6,7 +6,11 @@ import { Input, Button } from "@empac/cascadeds";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import styles from "./EmailSubscribe.module.css";
 
-export function EmailSubscribe() {
+interface EmailSubscribeProps {
+  variant?: "default" | "inline";
+}
+
+export function EmailSubscribe({ variant = "default" }: EmailSubscribeProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -53,10 +57,12 @@ export function EmailSubscribe() {
 
   if (status === "success") {
     return (
-      <div className={styles.wrapper}>
-        <p className={styles.successMsg}>
-          You&apos;re in. I&apos;ll let you know when the next post drops.
-        </p>
+      <div className={`${styles.wrapper} ${variant === "inline" ? styles.inline : ""}`}>
+        <div className={styles.inner}>
+          <p className={styles.successMsg}>
+            You&apos;re in. I&apos;ll let you know when the next post drops.
+          </p>
+        </div>
       </div>
     );
   }
@@ -64,7 +70,8 @@ export function EmailSubscribe() {
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${variant === "inline" ? styles.inline : ""}`}>
+      <div className={styles.inner}>
       <p className={styles.copy}>Get notified when I publish something new.</p>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputRow}>
@@ -107,6 +114,7 @@ export function EmailSubscribe() {
       {status === "error" && (
         <p className={styles.errorMsg}>{errorMsg}</p>
       )}
+      </div>
     </div>
   );
 }

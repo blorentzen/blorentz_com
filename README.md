@@ -15,6 +15,7 @@ Built with [Next.js](https://nextjs.org), styled with [CascadeDS](https://empac.
 | Styling       | CSS Modules + CDS design tokens (no Tailwind)                      |
 | Animation     | Framer Motion                                                      |
 | Content       | Structured TypeScript (case studies), Markdown (blog)              |
+| Email         | Mailerlite (subscribe) + Cloudflare Turnstile (spam prevention)    |
 | Fonts         | General Sans · Space Grotesk · JetBrains Mono · Inter              |
 | Deployment    | Vercel                                                             |
 
@@ -44,8 +45,13 @@ blorentz.com/
 │   │   ├── page.tsx              Work index (case study listing)
 │   │   └── [slug]/
 │   │       └── page.tsx          Individual case study
+│   ├── api/
+│   │   └── subscribe/
+│   │       └── route.ts          Mailerlite subscribe endpoint
 │   ├── blog/
 │   │   ├── page.tsx              Blog index (hero post + card grid)
+│   │   ├── rss.xml/
+│   │   │   └── route.ts          RSS feed
 │   │   └── [slug]/
 │   │       └── page.tsx          Individual blog post
 │   ├── about/
@@ -53,8 +59,9 @@ blorentz.com/
 │   └── colophon/
 │       └── page.tsx              Site credits & tech stack
 ├── components/
-│   ├── SiteNav/                  Navigation with animated underline
-│   ├── SiteFooter/               Site footer
+│   ├── SiteNav/                  Navigation with contact dropdown
+│   ├── SiteFooter/               Footer with social links + connect section
+│   ├── EmailSubscribe/           Blog email subscribe (Mailerlite + Turnstile)
 │   ├── Aurora/                   Animated gradient background
 │   ├── CaseStudyCard/            Case study preview card
 │   ├── CountUpStat/              Animated stat counter

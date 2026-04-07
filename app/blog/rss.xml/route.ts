@@ -10,7 +10,7 @@ function escapeXml(str: string): string {
 }
 
 function formatRFC822(dateStr: string): string {
-  const date = new Date(dateStr + "T07:00:00-07:00");
+  const date = new Date(dateStr + "T06:00:00-07:00");
   return date.toUTCString();
 }
 
@@ -25,7 +25,8 @@ export async function GET() {
       <description>${escapeXml(post.description)}</description>
       <pubDate>${formatRFC822(post.date)}</pubDate>
       <guid>https://blorentz.com/blog/${post.slug}</guid>
-      <enclosure url="${escapeXml(post.heroImage)}" type="image/jpeg" length="0"/>
+      <media:content url="${escapeXml(post.heroImage)}" medium="image" type="image/jpeg"/>
+      <media:thumbnail url="${escapeXml(post.heroImage)}"/>
     </item>`
     )
     .join("\n");

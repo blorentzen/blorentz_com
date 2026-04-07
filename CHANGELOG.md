@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-04-06
+
+### Added
+- **Contact dropdown** in navigation with "Book a time" (Cal.com link) and "Send an email" options
+- **RSS feed** at `/blog/rss.xml` with `media:content` tags for hero images in email clients
+  - Autodiscovery link in `<head>`
+  - RSS badge on blog index page
+- **Blog post scheduler** with timezone-aware publishing
+  - `isPublished` filter checks date + optional `publishTime` (Pacific timezone)
+  - Default publish time: 6:00am PST
+  - ISR revalidation (1 hour) on blog index and post pages
+  - Unpublished/future posts return 404 and are excluded from sitemap, RSS, and navigation
+- **Email subscribe component** with Cloudflare Turnstile spam prevention
+  - CDS Input and Button components
+  - Server-side Mailerlite API integration (`/api/subscribe`)
+  - Turnstile token verification on server
+  - Placed on blog index and individual blog posts
+- **Blog category system** (Phase 1 — data only, no UI filtering yet)
+  - Five categories: perspective, building, career, process, off-the-clock
+  - All posts tagged with category in frontmatter
+- **Blog post 4:** "The Still Life and the Soul" (scheduled for April 10)
+  - Image group layouts: 3-up rows, 2-up comparisons, with captions
+  - 13 images across 5 groups with lazy loading
+- **Footer updates:**
+  - "Let's connect" section with GitHub, LinkedIn, Calendar, and Mail icons
+  - Blog link added to footer navigation
+  - Email address in copyright line
+- **Sitemap** now includes published blog posts
+
+### Changed
+- Contact moved from dedicated page to nav dropdown (removed `/contact` route)
+- Footer social links moved to custom section above CDS Footer for heading support
+
 ## 2026-03-31
 
 ### Added

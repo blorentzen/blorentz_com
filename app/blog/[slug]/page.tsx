@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       </Reveal>
 
-      <EmailSubscribe />
+      <EmailSubscribe variant="inline" />
 
       <nav className={styles.postNav}>
         {prev ? (

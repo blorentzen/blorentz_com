@@ -81,7 +81,11 @@ This site uses a deliberate three-font system. Each font has specific usage rule
 - Case study images go in `public/images/work/[slug]/`
 - Blog posts are Markdown with frontmatter in `content/blog/`
 - Blog images are hosted on `cdn.empac.co/portfolio/images/blog/`
-- Blog supports HTML passthrough for `<figure>`, comparison blocks, and custom markup
+- Blog supports HTML passthrough for `<figure>`, comparison blocks, image groups, and custom markup
+- Blog uses date-gated publishing: `published: true` + `date` + optional `publishTime` (default 6:00am PST)
+- Blog categories: `perspective`, `building`, `career`, `process`, `off-the-clock` (single category per post)
+- RSS feed at `/blog/rss.xml` with `media:content` tags for hero images
+- Email subscribe via Mailerlite API (`/api/subscribe`) with Cloudflare Turnstile spam prevention
 - Thoughts/articles are MDX in `content/thoughts/` (Phase 2)
 
 ## Project Structure
@@ -92,6 +96,8 @@ app/                     Next.js App Router pages
   page.tsx               Homepage
   work/                  Case studies
   blog/                  Blog index + individual posts
+  blog/rss.xml/          RSS feed route
+  api/subscribe/         Mailerlite subscribe endpoint
   about/                 Personal story
   empac/                 Consultancy bridge (Cal.com embed)
   thoughts/              Articles (Phase 2)
@@ -169,10 +175,11 @@ Confident expert with zero pretension. Direct, not flowery. Results-focused. Fir
 
 ### Adding a blog post
 
-1. Create `content/blog/[slug].md` with frontmatter (title, slug, date, description, readTime, heroImage, heroAlt, published)
-2. Write post body in Markdown — supports HTML passthrough for `<figure>` with captions and comparison blocks
+1. Create `content/blog/[slug].md` with frontmatter (title, slug, date, publishTime, category, description, readTime, heroImage, heroAlt, published)
+2. Write post body in Markdown — supports HTML passthrough for `<figure>` with captions, comparison blocks, and image groups
 3. Host images on `cdn.empac.co/portfolio/images/blog/[post-slug]/`
 4. The latest post by date automatically becomes the hero on the blog index
+5. Posts with future dates are deployed but gated — they go live automatically at `publishTime` (default 6:00am PST) via ISR (1hr revalidation)
 
 ### Adding a case study
 

@@ -48,7 +48,7 @@ interface PostFrontmatter {
 function isPublished(data: PostFrontmatter): boolean {
   if (!data.published || !data.date) return false;
 
-  const timeStr = data.publishTime || "00:00";
+  const timeStr = data.publishTime || "06:00";
   const publishPacific = new Date(
     new Date(`${data.date}T${timeStr}:00`).toLocaleString("en-US", {
       timeZone: "America/Los_Angeles",

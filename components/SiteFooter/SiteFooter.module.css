@@ -1,3 +1,62 @@
-.footer {
+.siteFooter {
   border-top: 1px solid var(--border-default);
+}
+
+.connectSection {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-32) var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-12);
+}
+
+.connectHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-14);
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.connectLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+}
+
+.connectLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-8);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.connectLink:hover {
+  color: var(--text-primary);
+  background-color: var(--background-elevated);
+}
+
+.footer {
+  border-top: none;
+  padding-top: 0;
+}
+
+.footer :global(.empac-footer__main) {
+  display: none;
+}
+
+.footer :global(.empac-footer__bottom) {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .connectSection {
+    padding: var(--spacing-24) var(--spacing-16);
+  }
 }
