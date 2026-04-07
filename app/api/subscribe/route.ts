@@ -1,12 +1,41 @@
 import { NextResponse } from "next/server";
 
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return false;
+
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret, response: token }),
+  });
+
+  const data = await res.json();
+  return data.success === true;
+}
+
 export async function POST(request: Request) {
-  const { email } = await request.json();
+  const { email, turnstileToken } = await request.json();
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json(
       { error: "Please enter a valid email address." },
       { status: 400 }
+    );
+  }
+
+  if (!turnstileToken) {
+    return NextResponse.json(
+      { error: "Please complete the verification." },
+      { status: 400 }
+    );
+  }
+
+  const turnstileValid = await verifyTurnstile(turnstileToken);
+  if (!turnstileValid) {
+    return NextResponse.json(
+      { error: "Verification failed. Please try again." },
+      { status: 403 }
     );
   }
 

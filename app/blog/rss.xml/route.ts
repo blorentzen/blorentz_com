@@ -25,12 +25,13 @@ export async function GET() {
       <description>${escapeXml(post.description)}</description>
       <pubDate>${formatRFC822(post.date)}</pubDate>
       <guid>https://blorentz.com/blog/${post.slug}</guid>
+      <enclosure url="${escapeXml(post.heroImage)}" type="image/jpeg" length="0"/>
     </item>`
     )
     .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Britton Lorentzen's Blog</title>
     <link>https://blorentz.com/blog</link>
