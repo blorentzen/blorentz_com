@@ -1,7 +1,7 @@
 ---
 title: "The Still Life and the Soul"
 slug: "the-still-life-and-the-soul"
-date: "2026-04-07"
+date: "2026-04-08"
 publishTime: "06:00"
 category: "perspective"
 description: "A video game from 2018 predicted exactly where we are with AI art. Through two real Midjourney projects and a header image that neither me nor Claude could have made alone, I explore what creative direction means when the still life paints itself."
@@ -11,7 +11,7 @@ heroAlt: "16-bit pixel art of a small figure on a hilltop overlooking a city at 
 published: true
 ---
 
-There's a scene in *Detroit: Become Human* that I keep coming back to lately…
+There's a scene in _Detroit: Become Human_ that I keep coming back to lately…
 
 Markus, an android, is asked by Carl, an aging artist, to paint something while they're together in Carl's studio. Markus was able to produce a technically perfect still life. Every proportion is accurate, every detail is in the right place, and it was a flawless replication of what happened to be sitting in front of him.
 
@@ -41,7 +41,7 @@ AI is a tool. Just like a camera, just like Photoshop, and just like the printin
 
 The fundamentals still matter… they deserve to be understood, appreciated, respected, and followed… until it's time to break them. Knowing when to break the rules requires knowing why they exist in the first place, and we're getting incredibly close to that breaking point.
 
-This is exactly where *Detroit* felt prophetic to me... Markus could produce the still life incredibly well, but Carl asked for the soul. The difference between the two isn't technical ability, it comes down to interpretation… and if you have something to say, you better have the conviction to say it and mean it.
+This is exactly where _Detroit_ felt prophetic to me... Markus could produce the still life incredibly well, but Carl asked for the soul. The difference between the two isn't technical ability, it comes down to interpretation… and if you have something to say, you better have the conviction to say it and mean it.
 
 ### The still life, done well.
 
@@ -86,7 +86,7 @@ That pivot needed to happen in order for this new website branding to work. Some
 
 When it came time to create hero images for this blog, the challenge was very different. I knew I wanted something distinctive, something that felt like me, and something that would stop a scroll in a LinkedIn feed full of gradients, stock photography, and your typical AI generated stuff.
 
-One of my favorite games growing up was *Earthbound*. There's something about the bold colors, slightly surreal atmosphere, bizarre story telling, and playing through a world that feels like a curation of memories to places you've been to, or feel incredibly familiar. That felt like the right foundation for my generated artwork.
+One of my favorite games growing up was _Earthbound_. There's something about the bold colors, slightly surreal atmosphere, bizarre story telling, and playing through a world that feels like a curation of memories to places you've been to, or feel incredibly familiar. That felt like the right foundation for my generated artwork.
 
 The first prompts were pretty bad... I was basically painting a still life with words. I described every detail I could see in my head from floor-to-ceiling windows, city skylines, rain streaking glass, evergreen treelines, and screens glowing with creative work. The more I wrote, the more Midjourney tried to render, and the less the image actually communicated.
 
@@ -123,11 +123,11 @@ So we pushed along… I asked for more contrast between the two sides. I started
 <figcaption>Three attempts before the breakthrough. The obvious, the disaster, and the almost.</figcaption>
 </figure>
 
-For some reason, through this whole process, I somehow landed on the anime *Your Name* to experiment with.
+For some reason, through this whole process, I somehow landed on the anime _Your Name_ to experiment with.
 
 If you haven't seen it, it's an anime where two characters are connected across time and space due to a comet. Both characters experience the same world from different perspectives, with the characters switching bodies from time to time and learning to adapt to the world that was presented to them the next day. They never see each other until they reach a specific moment... twilight on a mountain where day and night exist in the same sky. It's one of the most visually stunning films I've personally ever seen, and it hit me that the concept we were chasing wasn't about two different worlds at all. It was about the same world being seen through two different eyes.
 
-I completely changed my prompt: I brought back my *Earthbound* inspired scenery, rooted it back into the pacific northwest, but one side is in a cold blue twilight with faint geometric constellations in the sky… the other in the warm glow of golden hour. The figure now stands where the light changes. Everything feels like it's a part of the atmosphere now, as if it was always there… we just needed a shift in perspective to see what's been there all along.
+I completely changed my prompt: I brought back my _Earthbound_ inspired scenery, rooted it back into the pacific northwest, but one side is in a cold blue twilight with faint geometric constellations in the sky… the other in the warm glow of golden hour. The figure now stands where the light changes. Everything feels like it's a part of the atmosphere now, as if it was always there… we just needed a shift in perspective to see what's been there all along.
 
 What makes this image matter to me is that neither of us could have made it independently. Claude proposed a concept, the split in composition, and gave input about historical and artistic references… I corrected and redirected the course when it felt wrong, continued to reject what didn't feel right, and identified when we hit something remarkable.
 
