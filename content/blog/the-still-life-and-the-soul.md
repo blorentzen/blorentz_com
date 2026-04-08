@@ -1,7 +1,7 @@
 ---
 title: "The Still Life and the Soul"
 slug: "the-still-life-and-the-soul"
-date: "2026-04-10"
+date: "2026-04-07"
 publishTime: "06:00"
 category: "perspective"
 description: "A video game from 2018 predicted exactly where we are with AI art. Through two real Midjourney projects and a header image that neither me nor Claude could have made alone, I explore what creative direction means when the still life paints itself."
