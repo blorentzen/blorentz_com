@@ -7,7 +7,7 @@ export const drPatelRedesign: CaseStudy = {
   voice: "build",
   year: "2023 – 2024",
   role: "Sole Designer and Developer",
-  order: 3,
+  order: 8,
   headline: "200+ consult inquiries, $500K+ revenue in Year 1.",
   heroImage: "https://cdn.empac.co/portfolio/images/dr-patel-example-thumb.jpg",
   videoUrl: "https://cdn.empac.co/main/assets/video/tarakpatel-website-preview.mp4",

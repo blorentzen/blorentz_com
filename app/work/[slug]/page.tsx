@@ -46,12 +46,38 @@ export async function generateMetadata({
   return meta;
 }
 
+function renderInline(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 function renderParagraphs(text: string, className: string) {
-  return text.split("\n\n").map((paragraph, i) => (
-    <p key={i} className={className}>
-      {paragraph}
-    </p>
-  ));
+  return text.split("\n\n").map((paragraph, i) => {
+    if (paragraph.startsWith("### ")) {
+      return (
+        <h4 key={i} className={styles.contentSubhead}>
+          {renderInline(paragraph.slice(4))}
+        </h4>
+      );
+    }
+    if (paragraph.startsWith("## ")) {
+      return (
+        <h3 key={i} className={styles.contentSubhead}>
+          {renderInline(paragraph.slice(3))}
+        </h3>
+      );
+    }
+    return (
+      <p key={i} className={className}>
+        {renderInline(paragraph)}
+      </p>
+    );
+  });
 }
 
 function getSuggestedStudies(currentSlug: string) {
@@ -167,8 +193,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <VideoPlayer
                 src={study.videoUrl}
                 title={`${study.title} demo`}
-                poster={hasHeroImage ? study.heroImage : undefined}
-                aspect="16/9"
+                poster={study.videoPoster || (hasHeroImage ? study.heroImage : undefined)}
+                aspect={(study.videoAspect as "16/9" | "16/10" | "4/3" | "1/1" | "21/9") || "16/9"}
               />
             </div>
           </Section>

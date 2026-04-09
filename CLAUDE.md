@@ -144,15 +144,16 @@ These are the CDS tokens used most frequently. Always reference these rather tha
 - `--shadow-sm`, `--shadow-md`, `--shadow-lg`
 - `--transition-fast`, `--transition-normal`
 
-## Case Studies at Launch (7 entries)
+## Case Studies (8 entries)
 
 1. T-Mobile Savings Calculator — Fortune 500 interactive tool at scale (voice: product)
 2. Olympic Energy Oil Tank Calculator — Custom tool, measurable impact (voice: product)
-3. Dr. Tarak Patel Custom Website Build — $500K+ revenue impact (voice: build)
+3. GameShuffle — Game night companion platform for Twitch communities (voice: build)
 4. T-Mobile Super Bowl Landing Page — High-stakes execution (voice: build)
 5. FN5GL — Million-dollar sweepstakes for high school football (voice: strategy)
 6. CascadeDS — Design system, this site runs on it (voice: build)
 7. Sidecar — Full-stack retainer management platform, in progress (voice: build)
+8. Dr. Tarak Patel Custom Website Build — $500K+ revenue impact (voice: build)
 
 ## Build Phases
 

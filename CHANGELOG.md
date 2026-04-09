@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-04-09
+
+### Added
+- **GameShuffle case study** (`/work/gameshuffle`) — game night companion platform
+  - Swapped into featured work on homepage (replaced Dr. Patel at order 3)
+  - Video demo with custom 16:10 aspect ratio support
+- **Case study content renderer** now supports `**bold**` inline text and `## subheads`
+- **VideoPlayer** supports custom aspect ratios (`16/10`) via CSS override wrapper
+- **Blog post 6:** "Nobody Knows What My Job Is" (scheduled Apr 21, career category)
+
 ## 2026-04-06
 
 ### Added

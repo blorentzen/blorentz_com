@@ -18,6 +18,8 @@ export interface CaseStudy {
   teamSize?: string;
   liveUrl?: string;
   videoUrl?: string;
+  videoPoster?: string;
+  videoAspect?: "16/9" | "16/10" | "4/3" | "1/1" | "21/9";
   stats?: {
     stat: string;
     label: string;
@@ -38,6 +40,7 @@ import { tmobileSuperBowl } from "./tmobile-super-bowl";
 import { fn5gl } from "./fn5gl";
 import { cascadeds } from "./cascadeds";
 import { sidecar } from "./sidecar";
+import { gameshuffle } from "./gameshuffle";
 
 const caseStudies: CaseStudy[] = [
   tmobileSavingsCalculator,
@@ -47,6 +50,7 @@ const caseStudies: CaseStudy[] = [
   fn5gl,
   cascadeds,
   sidecar,
+  gameshuffle,
 ];
 
 // Primary API
