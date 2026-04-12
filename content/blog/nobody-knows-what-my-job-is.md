@@ -1,7 +1,7 @@
 ---
 title: "Nobody Knows What My Job Is... And I Wouldn't Have It Any Other Way"
 slug: "nobody-knows-what-my-job-is"
-date: "2026-04-21"
+date: "2026-04-28"
 publishTime: "06:00"
 category: "career"
 description: "My title confuses recruiters, job boards, and ATS systems. Here's what the work actually looks like, why the hybrid role exists, and why I wouldn't have it any other way."
