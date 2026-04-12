@@ -1,7 +1,7 @@
 ---
 title: "I One-Shotted My Science Fair Volcano (Everyone Clapped)"
 slug: "i-one-shotted-my-science-fair-volcano-everyone-clapped"
-date: "2026-04-14"
+date: "2026-04-21"
 publishTime: "06:00"
 category: "process"
 description: "Everyone's posting 'I built this app in one prompt!' on LinkedIn. Here's what happens ten minutes after the eruption, and how to build something that's still standing when the science fair is over."

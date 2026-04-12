@@ -1,7 +1,7 @@
 ---
 title: "AI Isn't Coming for Your Job, The Other Department Is."
 slug: "creatives-vs-devs"
-date: "2026-04-21"
+date: "2026-04-14"
 publishTime: "06:00"
 category: "career"
 description: "Designers are using AI to code. Developers are using AI to design. The real AI fight isn't humans vs. machines — it's the two disciplines using AI to invade each other's territory."
@@ -57,7 +57,7 @@ I've been working at the intersection of design and development for my entire ca
 
 Most people don't work this way… most careers specialize, and there's nothing wrong with that. But sitting in the middle for this long gives you a perspective that's hard to get anywhere else. The gap between "I can produce output" and "I can make good decisions" is massive… and AI is making that gap even wider by empowering everyone to create "good enough" designs and/or infrastructure.
 
-Remember the kid who one-shotted his science fair volcano? They had the same energy we're seeing across disciplines. Designers are one-shotting their apps, developers are one-shotting their interfaces, and it's becoming incredibly easy to create a bunch of garbage because one side is trying so hard to save time by eliminating the other.
+All of this feels like that one kid back in grade school that made a volcano for their science fair project. The volcano depends on that one shot of vinegar hitting the baking soda and boof it works. We have designers one-shotting their apps, developers are one-shotting their interfaces, and it's becoming incredibly easy to create a bunch of garbage because one side is trying so hard to save time by eliminating the other.
 
 ### So... what's actually going to happen?
 
@@ -73,4 +73,4 @@ That feeling is valid. But the response shouldn't be hostility, it should be cur
 
 Start learning about the other side to know what good looks like... a designer who understands technical constraints makes better design decisions, and a developer who understands design principles writes better interfaces. This was true before AI, and it's going to be true moving forward. The cost of ignoring the other discipline is a lot lower, but the consequences of ignoring the other discipline is incredibly high… and it'll bite you when it hits you the hardest.
 
-AI didn't start a war between humans and machines, it accelerated a tension that's always existed between two groups of people who build things very differently. The way through isn't to pick a side, it's to get good enough at both to know when the AI output is actually solving the problem... and when it's just a really convincing volcano.
+AI didn't start a war between humans and machines, it accelerated a tension that's always existed between two groups of people who build things very differently. The way through isn't to pick a side, it's to get good enough at both to know when the AI output is actually solving the problem... and when it's just a really convincing demo.
