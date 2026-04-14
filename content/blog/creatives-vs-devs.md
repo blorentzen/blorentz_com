@@ -53,7 +53,7 @@ Similar to designers, I've seen plenty of developers show off AI-generated desig
 
 ### It's been painful watching both sides.
 
-I've been working at the intersection of design and development for my entire career. At T-Mobile, I'm usually going from Figma to VS Code to stakeholder presentations in the same week. Through Empac, I design the UX, build the front end, write the back end, and maintain the design system everything runs on. When I'm designing, I'm already thinking about how it'll all be built… and when I'm coding, I'm already thinking about whether the design is going to hold up.
+I've been working between both design and development for my entire career. At T-Mobile, I'm usually going from Figma to VS Code to stakeholder presentations in the same week. Through Empac, I design the UX, build the front end, write the back end, and maintain the design system everything runs on. When I'm designing, I'm already thinking about how it'll all be built… and when I'm coding, I'm already thinking about whether the design is going to hold up.
 
 Most people don't work this way… most careers specialize, and there's nothing wrong with that. But sitting in the middle for this long gives you a perspective that's hard to get anywhere else. The gap between "I can produce output" and "I can make good decisions" is massive… and AI is making that gap even wider by empowering everyone to create "good enough" designs and/or infrastructure.
 
