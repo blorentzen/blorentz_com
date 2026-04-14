@@ -4,7 +4,7 @@ slug: "creatives-vs-devs"
 date: "2026-04-14"
 publishTime: "06:00"
 category: "career"
-description: "Designers are using AI to code. Developers are using AI to design. The real AI fight isn't humans vs. machines — it's the two disciplines using AI to invade each other's territory."
+description: 'Designers are using AI to code, developers are using AI to design, and both groups are pissed when the other side celebrates it. Everyone keeps framing this as "AI vs. creatives" or "AI vs. developers." The real fight is creatives vs. developers, and they''re both using AI against one other.'
 readTime: "7 min read"
 heroImage: "https://cdn.empac.co/portfolio/images/blog/design-vs-dev/blorentz_16-bit_pixel_art_two_characters_standing_on_opposite_s_8e450235-539b-420d-9d6a-86dd923140fb.png"
 heroAlt: "16-bit pixel art of two characters standing on opposite sides of a glowing arcade cabinet on a city rooftop at dusk, warm amber light on the left and cool blue light on the right"
