@@ -8,6 +8,7 @@ export const fn5gl: CaseStudy = {
   year: "2025",
   role: "Technical Lead & Design Lead",
   order: 2,
+  category: "tmobile",
   headline: "2,000+ schools, 8M+ votes, $1M+ grand prize.",
   heroImage: "https://cdn.empac.co/portfolio/images/fn5gl-example-thumb.jpg",
   liveUrl: "https://www.t-mobile.com/brand/friday-night-5g-lights",

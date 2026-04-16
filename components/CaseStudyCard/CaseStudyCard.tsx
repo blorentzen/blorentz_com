@@ -30,6 +30,25 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
         ) : (
           <Placeholder aspectRatio="16 / 9" label={study.title} />
         )}
+        {study.cardLogo && (
+          <div
+            className={`${styles.cardLogoWrapper} ${
+              study.cardLogoType === "monogram"
+                ? styles.cardLogoMonogram
+                : styles.cardLogoHorizontal
+            }`}
+          >
+            <Image
+              src={study.cardLogo}
+              alt={`${study.client} logo`}
+              fill
+              className={styles.cardLogo}
+              sizes="(max-width: 768px) 50vw, 400px"
+              quality={95}
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        )}
       </div>
       <div className={styles.content}>
         <span className={styles.client}>{study.client}</span>

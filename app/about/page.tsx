@@ -38,9 +38,7 @@ export default function AboutPage() {
           <h1 className={styles.title}>Builder first, leader second.</h1>
           <p className={styles.headline}>
             I lead creative development at T&#x2011;Mobile, where my work ships
-            to tens of millions of people. I also run Empac, a consultancy I
-            started when I was 18 that builds custom tools and websites for
-            established businesses.
+            to tens of millions of people. I also run Empac, an incubator for all the website and app ideas that comes to my head.
           </p>
         </header>
       </Reveal>

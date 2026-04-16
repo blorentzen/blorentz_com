@@ -5,6 +5,31 @@
   padding-bottom: var(--spacing-64);
 }
 
+.section {
+  margin-bottom: var(--spacing-48);
+}
+
+.sectionHeader {
+  margin-bottom: var(--spacing-24);
+  padding-bottom: var(--spacing-16);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.sectionLabel {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sectionDescription {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-4);
+  max-width: 60ch;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -15,6 +40,14 @@
   .page {
     padding: 0 var(--spacing-16);
     padding-bottom: var(--spacing-48);
+  }
+
+  .section {
+    margin-bottom: var(--spacing-32);
+  }
+
+  .sectionLabel {
+    font-size: var(--font-size-20);
   }
 
   .grid {

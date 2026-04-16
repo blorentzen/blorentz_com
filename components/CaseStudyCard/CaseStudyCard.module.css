@@ -13,7 +13,31 @@
 }
 
 .thumbnail {
+  position: relative;
   overflow: hidden;
+}
+
+.cardLogoWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+}
+
+.cardLogoHorizontal {
+  width: 50%;
+  aspect-ratio: 4 / 1;
+}
+
+.cardLogoMonogram {
+  height: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.cardLogo {
+  object-fit: contain;
 }
 
 .thumbnailImage {

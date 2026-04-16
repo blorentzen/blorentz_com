@@ -1,4 +1,23 @@
 export type CaseStudyVoice = "product" | "strategy" | "build";
+export type CaseStudyCategory = "tmobile" | "empac-products" | "client-work";
+
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface ComparisonPair {
+  label: string;
+  before: { src: string; alt: string };
+  after: { src: string; alt: string };
+}
+
+export type ContentBlock =
+  | { type: "text"; content: string }
+  | { type: "gallery"; title?: string; description?: string; images: GalleryImage[]; aspectRatio?: "3/2" | "1/1" | "4/3" | "16/9" }
+  | { type: "video"; src: string; title: string; description?: string; poster?: string; aspect?: string }
+  | { type: "comparison"; title?: string; pairs: ComparisonPair[] };
 
 export interface CaseStudy {
   slug: string;
@@ -8,10 +27,13 @@ export interface CaseStudy {
   year: string;
   role: string;
   order: number;
+  category: CaseStudyCategory;
   headline: string;
   heroImage?: string;
+  cardLogo?: string;
+  cardLogoType?: "horizontal" | "monogram";
   problem: string;
-  approach: string;
+  approach: string | ContentBlock[];
   result: string;
   techStack?: string[];
   timeline?: string;
@@ -41,6 +63,8 @@ import { fn5gl } from "./fn5gl";
 import { cascadeds } from "./cascadeds";
 import { sidecar } from "./sidecar";
 import { gameshuffle } from "./gameshuffle";
+import { iyengarPlasticSurgery } from "./iyengar-plastic-surgery";
+import { consiglieri } from "./consiglieri";
 
 const caseStudies: CaseStudy[] = [
   tmobileSavingsCalculator,
@@ -51,6 +75,8 @@ const caseStudies: CaseStudy[] = [
   cascadeds,
   sidecar,
   gameshuffle,
+  iyengarPlasticSurgery,
+  consiglieri,
 ];
 
 // Primary API
@@ -66,9 +92,22 @@ export function getCaseStudySlugs(): string[] {
   return caseStudies.map((cs) => cs.slug);
 }
 
+export function getCaseStudiesByCategory(category: CaseStudyCategory): CaseStudy[] {
+  return getCaseStudies().filter((cs) => cs.category === category);
+}
+
 // Backward-compatible aliases (homepage uses these)
+const featuredSlugs = [
+  "tmobile-savings-calculator",
+  "fn5gl",
+  "gameshuffle",
+  "cascadeds",
+];
+
 export function getFeaturedCaseStudies(): CaseStudy[] {
-  return getCaseStudies().filter((cs) => cs.order <= 4);
+  return featuredSlugs
+    .map((slug) => caseStudies.find((cs) => cs.slug === slug))
+    .filter((cs): cs is CaseStudy => cs !== undefined);
 }
 
 export function getAllCaseStudies(): CaseStudy[] {

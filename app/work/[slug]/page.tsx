@@ -6,6 +6,7 @@ import {
   getCaseStudy,
   getCaseStudySlugs,
 } from "@/content/case-studies";
+import type { ContentBlock } from "@/content/case-studies";
 import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
 import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 import { StatCards } from "@/components/StatCards/StatCards";
@@ -80,6 +81,135 @@ function renderParagraphs(text: string, className: string) {
   });
 }
 
+function renderContentBlocks(blocks: ContentBlock[]) {
+  return blocks.map((block, i) => {
+    switch (block.type) {
+      case "text":
+        return (
+          <div key={i} className={styles.narrative}>
+            {renderParagraphs(block.content, styles.body)}
+          </div>
+        );
+      case "gallery":
+        return (
+          <div key={i} className={styles.galleryBlock}>
+            {block.title && (
+              <h3 className={styles.galleryTitle}>{block.title}</h3>
+            )}
+            {block.description && (
+              <p className={styles.galleryDescription}>{block.description}</p>
+            )}
+            <div
+              className={
+                block.images.length === 2
+                  ? styles.galleryGrid2
+                  : block.images.length <= 3
+                  ? styles.galleryGrid3
+                  : styles.galleryGrid3
+              }
+            >
+              {block.images.map((img, j) => (
+                <figure key={j} className={styles.galleryItem}>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={600}
+                    height={600}
+                    className={styles.galleryImg}
+                    style={{
+                      aspectRatio: (block.aspectRatio || "3/2").replace(
+                        "/",
+                        " / "
+                      ),
+                    }}
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    loading="lazy"
+                  />
+                  {img.caption && (
+                    <figcaption className={styles.galleryCaption}>
+                      {img.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        );
+      case "video":
+        return (
+          <div key={i} className={styles.inlineVideo}>
+            {block.title && (
+              <h3 className={styles.inlineVideoTitle}>{block.title}</h3>
+            )}
+            {block.description && (
+              <p className={styles.inlineVideoDescription}>
+                {block.description}
+              </p>
+            )}
+            <div className={styles.videoContainer}>
+              <VideoPlayer
+                src={block.src}
+                title={block.title}
+                poster={block.poster}
+                aspect={
+                  (block.aspect as
+                    | "16/9"
+                    | "16/10"
+                    | "4/3"
+                    | "1/1"
+                    | "21/9") || "16/9"
+                }
+              />
+            </div>
+          </div>
+        );
+      case "comparison":
+        return (
+          <div key={i} className={styles.comparisonBlock}>
+            {block.title && (
+              <h3 className={styles.comparisonTitle}>{block.title}</h3>
+            )}
+            <div className={styles.comparisonPairs}>
+              {block.pairs.map((pair, j) => (
+                <div key={j} className={styles.comparisonPair}>
+                  <span className={styles.comparisonLabel}>{pair.label}</span>
+                  <div className={styles.comparisonImages}>
+                    <figure className={styles.comparisonSide}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={pair.before.src}
+                        alt={pair.before.alt}
+                        className={styles.comparisonImg}
+                        loading="lazy"
+                      />
+                      <figcaption className={styles.comparisonSideLabel}>
+                        Before
+                      </figcaption>
+                    </figure>
+                    <figure className={styles.comparisonSide}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={pair.after.src}
+                        alt={pair.after.alt}
+                        className={styles.comparisonImg}
+                        loading="lazy"
+                      />
+                      <figcaption className={styles.comparisonSideLabel}>
+                        After
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  });
+}
+
 function getSuggestedStudies(currentSlug: string) {
   const all = getCaseStudies();
   const currentIndex = all.findIndex((cs) => cs.slug === currentSlug);
@@ -126,6 +256,25 @@ export default async function CaseStudyPage({ params }: PageProps) {
               sizes="(max-width: 768px) 100vw, 1200px"
               priority
             />
+            {study.cardLogo && (
+              <div
+                className={`${styles.heroLogoWrapper} ${
+                  study.cardLogoType === "monogram"
+                    ? styles.heroLogoMonogram
+                    : styles.heroLogoHorizontal
+                }`}
+              >
+                <Image
+                  src={study.cardLogo}
+                  alt={`${study.client} logo`}
+                  fill
+                  className={styles.heroLogo}
+                  sizes="(max-width: 768px) 60vw, 500px"
+                  quality={95}
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+            )}
           </ParallaxImage>
         ) : (
           <div className={styles.heroImage}>
@@ -155,9 +304,13 @@ export default async function CaseStudyPage({ params }: PageProps) {
       {/* 3. The Approach */}
       <Reveal className={styles.narrativeSection}>
         <Section heading="The Approach">
-          <div className={styles.narrative}>
-            {renderParagraphs(study.approach, styles.body)}
-          </div>
+          {typeof study.approach === "string" ? (
+            <div className={styles.narrative}>
+              {renderParagraphs(study.approach, styles.body)}
+            </div>
+          ) : (
+            renderContentBlocks(study.approach)
+          )}
         </Section>
       </Reveal>
 

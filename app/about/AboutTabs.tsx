@@ -198,23 +198,17 @@ function FullStoryTab() {
           <h2 className={styles.ctaHeading}>Want to see the work?</h2>
           <p className={styles.body}>
             I&apos;ve worked on quite a few high profile projects over the
-            years. On the side, I also take on a limited number of engagements
-            through Empac. Whether you&apos;re here for the corporate work or
-            for a look into Empac, there&apos;s sure to be something here for
+            years. On the side, I also take on a limited number of engagements with small and medium sizes business around the Puget Sound. Whether you&apos;re here for the corporate work or
+            to collaborate with me on a project, there&apos;s sure to be something here for
             you.
           </p>
           <div className={styles.ctaLinks}>
             <Link href="/work" className={styles.ctaLinkPrimary}>
               See my work
             </Link>
-            <a
-              href="https://empac.co"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaLinkSecondary}
-            >
-              Learn about Empac
-            </a>
+            <Link href="/work-with-me" className={styles.ctaLinkSecondary}>
+              Work with me
+            </Link>
           </div>
         </section>
       </Reveal>

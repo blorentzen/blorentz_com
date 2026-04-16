@@ -8,6 +8,7 @@ export const tmobileSavingsCalculator: CaseStudy = {
   year: "2022 – Present",
   role: "Lead Designer, Lead Developer, Product Owner",
   order: 1,
+  category: "tmobile",
   headline: "50% lift in shop-to-cart rate. Featured in national TV spots.",
   heroImage: "https://cdn.empac.co/portfolio/images/savings-calc-example-thumb.jpg",
   liveUrl: "https://www.t-mobile.com/cell-phone-plans",

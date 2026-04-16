@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         hostname: "cdn.empac.co",
         pathname: "/portfolio/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.empac.co",
+        pathname: "/main/**",
+      },
     ],
   },
 };

@@ -52,9 +52,10 @@ export function SiteFooter() {
         className={styles.footer}
         copyright={`\u00A9 ${currentYear} Britton Lorentzen \u00B7 Britton@empac.co`}
         bottomLinks={[
-          { href: "/work", label: "Work" },
+          { href: "/work", label: "Portfolio" },
           { href: "/blog", label: "Blog" },
           { href: "/about", label: "About" },
+          { href: "/work-with-me", label: "Work With Me" },
           { href: "/colophon", label: "Colophon" },
         ]}
       />

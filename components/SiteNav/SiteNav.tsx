@@ -9,9 +9,10 @@ import { ThemeToggle, Icon, icons } from "@empac/cascadeds";
 import styles from "./SiteNav.module.css";
 
 const navLinks = [
-  { href: "/work", label: "Work" },
+  { href: "/work", label: "Portfolio" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
+  { href: "/work-with-me", label: "Work With Me" },
 ];
 
 export function SiteNav() {
@@ -71,7 +72,7 @@ export function SiteNav() {
 
         <div className={styles.desktopLinks}>
           {navLinks.map((link) => {
-            const isActive = pathname.startsWith(link.href);
+            const isActive = pathname === link.href || (pathname.startsWith(link.href + "/"));
             return (
               <Link
                 key={link.href}
@@ -157,7 +158,7 @@ export function SiteNav() {
                 key={link.href}
                 href={link.href}
                 className={`${styles.mobileLink} ${
-                  pathname.startsWith(link.href) ? styles.active : ""
+                  (pathname === link.href || pathname.startsWith(link.href + "/")) ? styles.active : ""
                 }`}
                 onClick={closeMobile}
               >
