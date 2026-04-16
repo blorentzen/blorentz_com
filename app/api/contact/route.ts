@@ -14,9 +14,57 @@ async function verifyTurnstile(token: string): Promise<boolean> {
   return data.success === true;
 }
 
+function sanitize(str: string): string {
+  return str
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/&(?!amp;|lt;|gt;)/g, "&amp;");
+}
+
+const recentSubmissions = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60 * 1000;
+const RATE_LIMIT_MAX = 3;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = recentSubmissions.get(ip) || [];
+  const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW);
+  recentSubmissions.set(ip, recent);
+  if (recent.length >= RATE_LIMIT_MAX) return true;
+  recent.push(now);
+  recentSubmissions.set(ip, recent);
+  return false;
+}
+
+const MAX_FIELD_LENGTH = 500;
+const MAX_PROBLEM_LENGTH = 5000;
+
+const validServiceTypes = ["custom-tool", "website", "optimization", "not-sure"];
+
 export async function POST(request: Request) {
-  const { name, email, company, website, serviceType, problem, referral, turnstileToken } =
-    await request.json();
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown";
+
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: "Too many submissions. Please try again in a minute." },
+      { status: 429 }
+    );
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Invalid request." },
+      { status: 400 }
+    );
+  }
+
+  const { name, email, company, website, serviceType, problem, referral, turnstileToken } = body;
 
   if (process.env.TURNSTILE_SECRET_KEY) {
     if (!turnstileToken) {
@@ -42,6 +90,33 @@ export async function POST(request: Request) {
     );
   }
 
+  if (
+    typeof name !== "string" ||
+    typeof email !== "string" ||
+    typeof company !== "string" ||
+    typeof serviceType !== "string" ||
+    typeof problem !== "string"
+  ) {
+    return NextResponse.json(
+      { error: "Invalid request." },
+      { status: 400 }
+    );
+  }
+
+  if (
+    name.length > MAX_FIELD_LENGTH ||
+    email.length > MAX_FIELD_LENGTH ||
+    company.length > MAX_FIELD_LENGTH ||
+    problem.length > MAX_PROBLEM_LENGTH ||
+    (website && typeof website === "string" && website.length > MAX_FIELD_LENGTH) ||
+    (referral && typeof referral === "string" && referral.length > MAX_FIELD_LENGTH)
+  ) {
+    return NextResponse.json(
+      { error: "One or more fields exceed the maximum length." },
+      { status: 400 }
+    );
+  }
+
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json(
       { error: "Please enter a valid email address." },
@@ -49,21 +124,28 @@ export async function POST(request: Request) {
     );
   }
 
+  if (!validServiceTypes.includes(serviceType)) {
+    return NextResponse.json(
+      { error: "Invalid service type." },
+      { status: 400 }
+    );
+  }
+
   const serviceLabels: Record<string, string> = {
     "custom-tool": "Custom Interactive Tool",
-    website: "Website Project",
+    website: "Website Build or Redesign",
     optimization: "Ongoing Optimization",
     "not-sure": "Not Sure Yet",
   };
 
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    `Company: ${company}`,
-    website ? `Website: ${website}` : null,
-    `Service Type: ${serviceLabels[serviceType] || serviceType}`,
-    `\nProblem:\n${problem}`,
-    referral ? `\nReferral: ${referral}` : null,
+  const emailBody = [
+    `Name: ${sanitize(name)}`,
+    `Email: ${sanitize(email)}`,
+    `Company: ${sanitize(company)}`,
+    website ? `Website: ${sanitize(String(website))}` : null,
+    `Service Type: ${serviceLabels[serviceType] || sanitize(serviceType)}`,
+    `\nProblem:\n${sanitize(problem)}`,
+    referral ? `\nReferral: ${sanitize(String(referral))}` : null,
   ]
     .filter(Boolean)
     .join("\n");
@@ -87,15 +169,17 @@ export async function POST(request: Request) {
           },
         ],
         reply_to: {
-          email,
-          name,
+          email: sanitize(email),
+          name: sanitize(name),
         },
-        subject: `Work With Me: ${name} — ${company}`,
-        text: body,
+        subject: `Work With Me: ${sanitize(name)} — ${sanitize(company)}`,
+        text: emailBody,
       }),
     });
 
     if (!res.ok) {
+      const errorData = await res.json().catch(() => null);
+      console.error("Mailersend error:", res.status, errorData);
       return NextResponse.json(
         { error: "Failed to send. Please try again." },
         { status: 500 }
