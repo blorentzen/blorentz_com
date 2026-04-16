@@ -91,7 +91,7 @@ export function EmailSubscribe({ variant = "default" }: EmailSubscribeProps) {
             variant="primary"
             size="medium"
             loading={status === "loading"}
-            disabled={status === "loading" || !turnstileToken}
+            disabled={status === "loading" || (!!siteKey && !turnstileToken)}
           >
             Subscribe
           </Button>
