@@ -200,7 +200,7 @@ function FullStoryTab() {
           </p>
           <div className={styles.ctaLinks}>
             <Link href="/work" className={styles.ctaLinkPrimary}>
-              See my work
+              Check out portfolio
             </Link>
             <Link href="/work-with-me" className={styles.ctaLinkSecondary}>
               Work with me
