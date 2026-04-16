@@ -1,5 +1,5 @@
 ---
-title: "Nobody Knows What My Job Is... And I Wouldn't Have It Any Other Way"
+title: "Nobody knows what my job is... and I wouldn't have it any other way."
 slug: "nobody-knows-what-my-job-is"
 date: "2026-04-28"
 publishTime: "06:00"

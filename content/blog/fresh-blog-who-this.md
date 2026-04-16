@@ -1,5 +1,5 @@
 ---
-title: "Fresh Blog, Who This?"
+title: "Fresh blog, who this?"
 slug: "fresh-blog-who-this"
 date: "2026-03-31"
 description: "If you work in creative or development, you've probably had the same thoughts I've had lately about AI. Here's why I'm writing about it."

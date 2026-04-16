@@ -1,5 +1,5 @@
 ---
-title: "The Still Life and the Soul"
+title: "The still life and the soul."
 slug: "the-still-life-and-the-soul"
 date: "2026-04-08"
 publishTime: "06:00"

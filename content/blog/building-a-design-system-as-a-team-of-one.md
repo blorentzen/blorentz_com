@@ -1,5 +1,5 @@
 ---
-title: "Building a Design System as a Team of One"
+title: "Building a design system as a team of one."
 slug: "building-a-design-system-as-a-team-of-one"
 date: "2026-04-04"
 description: "Everything built with AI is starting to look the same. I built my own design system from scratch so Claude Code pulls from my decisions, not everyone else's defaults."

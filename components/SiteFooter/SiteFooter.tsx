@@ -55,7 +55,6 @@ export function SiteFooter() {
           { href: "/work", label: "Portfolio" },
           { href: "/blog", label: "Blog" },
           { href: "/about", label: "About" },
-          { href: "/work-with-me", label: "Work With Me" },
           { href: "/colophon", label: "Colophon" },
         ]}
       />

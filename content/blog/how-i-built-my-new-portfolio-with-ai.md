@@ -1,5 +1,5 @@
 ---
-title: "How I Built My New Portfolio With AI"
+title: "How I built my new portfolio with AI."
 slug: "how-i-built-my-new-portfolio-with-ai"
 date: "2026-03-31"
 description: "I rebuilt my portfolio from the ground up using Figma, Claude.ai, and Claude Code. Here's what the workflow actually looked like, where AI helped, and where it took liberties it shouldn't have."

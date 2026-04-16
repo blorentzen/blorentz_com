@@ -19,8 +19,7 @@ export default function Home() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className={styles.heroTagline}>
-            I lead front-end development at T‑Mobile and run Empac, a
-            consultancy I started when I was 18. I love to build things that
+            I lead front-end development at T‑Mobile and run Empac, an incubator for all the wild website and app ideas that come to my head. I love to build things that
             drive results for businesses... whether they&apos;re interactive
             tools, design systems, or custom websites and applications.
           </p>
@@ -28,10 +27,10 @@ export default function Home() {
         <Reveal delay={0.3}>
           <div className={styles.heroCtas}>
             <Link href="/work" className={styles.ctaPrimary}>
-              See my work
+              Check out portfolio
             </Link>
             <Link href="/about" className={styles.ctaSecondary}>
-              About me
+              More about me
             </Link>
           </div>
         </Reveal>

@@ -1,5 +1,5 @@
 ---
-title: "I One-Shotted My Science Fair Volcano (Everyone Clapped)"
+title: "I one-shotted my science fair volcano (everyone clapped)"
 slug: "i-one-shotted-my-science-fair-volcano-everyone-clapped"
 date: "2026-04-21"
 publishTime: "06:00"

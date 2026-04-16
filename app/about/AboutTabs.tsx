@@ -23,7 +23,7 @@ const timeline = [
     role: "Founder & Principal Consultant",
     period: "2010 – Present",
     description:
-      "Founded as Emerald Pacific Outfitters, evolved into a technology consultancy for established businesses. Built CascadeDS (a design system powering multiple applications), Sidecar (a retainer management platform), and shipped work across healthcare, energy, and SaaS.",
+      "Founded as Emerald Pacific Outfitters, it evolved into a technology consultancy for established businesses. Today, it’s now an incubator for website and app ideas. So far I’ve built CascadeDS (a design system powering multiple applications), Sidecar (a retainer management platform), GameShuffle (a companion for family/friends game nights), and shipped work across healthcare, energy, and SaaS.",
   },
   {
     company: "Apple",
@@ -144,13 +144,9 @@ function FullStoryTab() {
           <Reveal>
             <p className={styles.body}>
               Meanwhile, Empac has been running the whole time in the background.
-              What started as a one-person action sports brand has evolved into a
-              consultancy that helps established businesses figure out the right
-              technology approach for their business. Sometimes that means
-              configuring what they already have, sometimes it means finding them
-              the right platform. Or, we might need to build something custom
-              from scratch. The main challenge is identifying which direction to
-              go and what will be the right call for my clients.
+              What started as a one-person action sports brand evolved into a
+              consultancy that helped established businesses figure out the right
+              technology approach for their business. With the emergence of AI, Empac is now turning into an incubator for all the wild website and app ideas that come to my head. However, I still love to take on a select amount of clients throughout the year for any business problems they're looking to solve.
             </p>
           </Reveal>
           <Reveal>

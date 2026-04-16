@@ -1,5 +1,5 @@
 ---
-title: "AI Isn't Coming for Your Job, The Other Department Is."
+title: "AI isn't coming for your job, the other department is."
 slug: "creatives-vs-devs"
 date: "2026-04-14"
 publishTime: "06:00"
