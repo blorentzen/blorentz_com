@@ -172,6 +172,7 @@ export const iyengarPlasticSurgery: CaseStudy = {
       type: "video",
       src: "https://cdn.empac.co/main/assets/video/sample-of-iyengar-website.mp4",
       title: "The Website in Action",
+      poster: "https://cdn.empac.co/main/assets/images/work-samples/dr-iyengar/iyengar-web-preview-thumb.png",
     },
     {
       type: "text",

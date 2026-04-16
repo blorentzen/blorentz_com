@@ -30,6 +30,7 @@ export const consiglieri: CaseStudy = {
       type: "video",
       src: "https://cdn.empac.co/main/assets/video/consiglieri-website-preview.mp4",
       title: "The Website in Action",
+      poster: "https://cdn.empac.co/main/assets/images/work-samples/consiglieri/consiglieri-web-preview-thumb.png",
     },
     {
       type: "text",
