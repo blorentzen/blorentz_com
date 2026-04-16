@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s — Britton Lorentzen",
   },
   description:
-    "Strategic front-end engineering leader. Fortune 500 experience, boutique consultancy execution.",
+    "Strategic design and front-end engineering leader with Fortune 500 experience, boutique consultancy experience, and a large amount of website and app ideas in the works.",
   icons: {
     icon: "https://cdn.empac.co/portfolio/images/empac-logo-browser.jpg",
     shortcut: "https://cdn.empac.co/portfolio/images/empac-logo-browser.jpg",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Britton Lorentzen",
     title: "Britton Lorentzen",
     description:
-      "Strategic front-end engineering leader. Fortune 500 experience, boutique consultancy execution.",
+      "Strategic design and front-end engineering leader with Fortune 500 experience, boutique consultancy experience, and a large amount of website and app ideas in the works.",
     images: [
       {
         url: "https://cdn.empac.co/portfolio/images/blorentz-og.jpg",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Britton Lorentzen",
     description:
-      "Strategic front-end engineering leader. Fortune 500 experience, boutique consultancy execution.",
+      "Strategic design and front-end engineering leader with Fortune 500 experience, boutique consultancy experience, and a large amount of website and app ideas in the works.",
     images: ["https://cdn.empac.co/portfolio/images/blorentz-og.jpg"],
   },
 };
