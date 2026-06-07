@@ -1,0 +1,100 @@
+.page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-48) var(--spacing-24);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: var(--spacing-32);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+  background-color: var(--background-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.intro,
+.sentText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-12);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-primary);
+  background-color: var(--background-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-8);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+}
+
+.button {
+  margin-top: var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-24);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-500);
+  border: none;
+  border-radius: var(--radius-8);
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.error {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: #e53e3e;
+}
+
+.help {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-8);
+}
+
+.helpLink {
+  color: var(--primary-500);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 // @ts-expect-error CDS Input/Button type declarations reference CSS files not present in dist/types
 import { Input, Button } from "@empac/cascadeds";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./EmailSubscribe.module.css";
 
 interface EmailSubscribeProps {
@@ -46,6 +47,7 @@ export function EmailSubscribe({ variant = "default" }: EmailSubscribeProps) {
         return;
       }
 
+      trackEvent("Newsletter Signup");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -104,7 +106,7 @@ export function EmailSubscribe({ variant = "default" }: EmailSubscribeProps) {
               onSuccess={setTurnstileToken}
               onExpire={() => setTurnstileToken(null)}
               options={{
-                theme: "dark",
+                theme: "light",
                 size: "compact",
               }}
             />

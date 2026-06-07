@@ -14,6 +14,8 @@ import { Placeholder } from "@/components/Placeholder/Placeholder";
 import { Section } from "@/components/Section/Section";
 import { Reveal } from "@/components/Reveal/Reveal";
 import { ParallaxImage } from "@/components/ParallaxImage/ParallaxImage";
+// @ts-expect-error CDS type declarations reference CSS files not present in dist/types
+import { Avatar } from "@empac/cascadeds";
 import styles from "./page.module.css";
 
 interface PageProps {
@@ -35,7 +37,7 @@ export async function generateMetadata({
     title: study.title,
     description: study.headline,
     openGraph: {
-      title: `${study.title} — ${study.client}`,
+      title: `${study.title} · ${study.client}`,
       description: study.headline,
     },
   };
@@ -320,19 +322,29 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <div className={styles.narrative}>
             {renderParagraphs(study.result, styles.body)}
             {study.testimonial && (
-              <blockquote className={styles.testimonial}>
-                <p className={styles.testimonialQuote}>
+              <figure className={styles.testimonial}>
+                {(study.testimonial.image || study.testimonial.initials) && (
+                  <Avatar
+                    src={study.testimonial.image}
+                    initials={study.testimonial.initials}
+                    alt={study.testimonial.author}
+                    size="xlarge"
+                    shape="circle"
+                    color="primary"
+                  />
+                )}
+                <blockquote className={styles.testimonialQuote}>
                   &ldquo;{study.testimonial.quote}&rdquo;
-                </p>
-                <footer className={styles.testimonialAttribution}>
+                </blockquote>
+                <figcaption className={styles.testimonialAttribution}>
                   <span className={styles.testimonialAuthor}>
                     {study.testimonial.author}
                   </span>
                   <span className={styles.testimonialRole}>
                     {study.testimonial.role}
                   </span>
-                </footer>
-              </blockquote>
+                </figcaption>
+              </figure>
             )}
           </div>
         </Section>

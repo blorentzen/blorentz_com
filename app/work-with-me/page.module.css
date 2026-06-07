@@ -1,14 +1,47 @@
 .page {
+  padding-bottom: var(--spacing-64);
+  overflow-x: clip;
+  background-color: var(--background-secondary);
+  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 20px -6px rgba(15, 23, 42, 0.12);
+}
+
+.content {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-24);
-  padding-bottom: var(--spacing-64);
 }
 
-/* Hero */
+/* Hero — full-bleed dark band */
 
-.hero {
-  padding: var(--spacing-48) 0 var(--spacing-32);
+.heroBand {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-bottom: var(--spacing-48);
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 50% -10%,
+      rgba(14, 117, 193, 0.18),
+      transparent 70%
+    ),
+    var(--gray-950);
+}
+
+.heroAurora {
+  opacity: 0.55 !important;
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: clamp(var(--spacing-64), 12vh, 144px) var(--spacing-24);
+}
+
+.heroContent {
   max-width: 720px;
 }
 
@@ -58,59 +91,151 @@
   margin-bottom: var(--spacing-24);
 }
 
-/* Services */
+/* Three Ways to Start */
 
-.serviceGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.doorLabel {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 500;
+  color: var(--primary-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Anchor door — primary visual weight */
+
+.doorAnchor {
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-32);
+  padding: var(--spacing-32);
+  margin-bottom: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+  background-color: var(--background-elevated);
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.doorAnchor:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -10px rgba(15, 23, 42, 0.22);
+}
+
+.doorAnchorMain {
+  display: flex;
+  align-items: center;
   gap: var(--spacing-24);
 }
 
-.serviceCard {
+.doorAnchorIcon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-16);
+  background-color: rgba(14, 117, 193, 0.1);
+  color: var(--primary-500);
+}
+
+.doorAnchorText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.doorAnchorTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-32);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.doorAnchorDescription {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.doorAnchorCta {
+  flex-shrink: 0;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-500);
+  padding: var(--spacing-12) var(--spacing-24);
+  border-radius: var(--radius-8);
+  white-space: nowrap;
+}
+
+/* On-ramp doors — lighter */
+
+.doorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-24);
+}
+
+.door {
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
   padding: var(--spacing-24);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-12);
   background-color: var(--background-elevated);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-12);
+  text-decoration: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
 }
 
-.serviceHeader {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--spacing-12);
+.door:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-500);
+  box-shadow: 0 14px 32px -10px rgba(15, 23, 42, 0.2);
 }
 
-.serviceTitle {
+.doorIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-12);
+  background-color: rgba(14, 117, 193, 0.1);
+  color: var(--primary-500);
+  margin-bottom: var(--spacing-4);
+}
+
+.doorTitle {
   font-family: var(--font-family-display);
   font-size: var(--font-size-18);
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.servicePrice {
-  font-family: var(--font-family-technical);
-  font-size: var(--font-size-14);
-  font-weight: 500;
-  color: var(--primary-500);
-  white-space: nowrap;
-}
-
-.serviceDescription {
+.doorDescription {
   font-family: var(--font-family-body);
   font-size: var(--font-size-14);
   color: var(--text-secondary);
   line-height: 1.6;
+  flex-grow: 1;
 }
 
-.serviceSignal {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-14);
-  color: var(--text-tertiary);
-  line-height: 1.5;
-  font-style: italic;
+.doorCta {
+  margin-top: var(--spacing-8);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--primary-500);
 }
 
 /* Who This Is For */
@@ -151,74 +276,26 @@
   font-size: var(--font-size-14);
   color: var(--text-secondary);
   line-height: 1.5;
-  padding-left: var(--spacing-16);
-  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-8);
 }
 
-.fitItem::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--primary-500);
+.fitIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--primary-500);
+  margin-top: 1px;
 }
 
-.fitLabelNot + .fitList .fitItem::before {
-  background-color: var(--text-tertiary);
+.fitIconNot {
+  color: var(--text-tertiary);
 }
 
 .fitNote {
   font-family: var(--font-family-body);
   font-size: var(--font-size-14);
   color: var(--text-tertiary);
-  line-height: 1.6;
-  max-width: 60ch;
-}
-
-/* Process */
-
-.processGrid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-24);
-}
-
-.processStep {
-  display: flex;
-  gap: var(--spacing-16);
-  align-items: flex-start;
-}
-
-.processNumber {
-  font-family: var(--font-family-technical);
-  font-size: var(--font-size-14);
-  font-weight: 600;
-  color: var(--primary-500);
-  min-width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--primary-500);
-  border-radius: var(--radius-4);
-  flex-shrink: 0;
-}
-
-.processLabel {
-  font-family: var(--font-family-display);
-  font-size: var(--font-size-16);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-4);
-}
-
-.processDescription {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-14);
-  color: var(--text-secondary);
   line-height: 1.6;
   max-width: 60ch;
 }
@@ -250,17 +327,32 @@
 
 /* Testimonials */
 
+.testimonialNote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  max-width: 60ch;
+  margin-bottom: var(--spacing-24);
+}
+
 .testimonialGrid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-24);
 }
 
-.testimonial {
+.testimonialCard {
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-12);
   padding: var(--spacing-24);
-  border-left: 3px solid var(--primary-500);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
   background-color: var(--background-elevated);
-  border-radius: 0 var(--radius-8) var(--radius-8) 0;
 }
 
 .testimonialQuote {
@@ -269,18 +361,18 @@
   color: var(--text-primary);
   line-height: 1.6;
   font-style: italic;
+  flex-grow: 1;
 }
 
 .testimonialAttribution {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  margin-top: var(--spacing-12);
 }
 
 .testimonialAuthor {
   font-family: var(--font-family-display);
-  font-size: var(--font-size-14);
+  font-size: var(--font-size-16);
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -394,12 +486,15 @@
 
 @media (max-width: 768px) {
   .page {
-    padding: 0 var(--spacing-16);
     padding-bottom: var(--spacing-48);
   }
 
-  .hero {
-    padding: var(--spacing-32) 0 var(--spacing-24);
+  .content {
+    padding: 0 var(--spacing-16);
+  }
+
+  .heroInner {
+    padding: var(--spacing-48) var(--spacing-16);
   }
 
   .heroTitle {
@@ -410,7 +505,18 @@
     font-size: var(--font-size-16);
   }
 
-  .serviceGrid {
+  .doorAnchor {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-16);
+    padding: var(--spacing-24);
+  }
+
+  .doorAnchorTitle {
+    font-size: var(--font-size-24);
+  }
+
+  .doorGrid {
     grid-template-columns: 1fr;
   }
 
@@ -420,6 +526,10 @@
   }
 
   .proofGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialGrid {
     grid-template-columns: 1fr;
   }
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Writing about creative development, AI-assisted workflows, and building things for a living.",
   openGraph: {
-    title: "Blog — Britton Lorentzen",
+    title: "Blog · Britton Lorentzen",
     description:
       "Writing about creative development, AI-assisted workflows, and building things for a living.",
   },

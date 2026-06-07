@@ -1,0 +1,683 @@
+.page {
+  padding-bottom: var(--spacing-64);
+  overflow-x: clip;
+  background-color: var(--background-secondary);
+  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 20px -6px rgba(15, 23, 42, 0.12);
+}
+
+.content {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+/* Hero — full-bleed dark band */
+
+.heroBand {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-bottom: var(--spacing-48);
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 50% -10%,
+      rgba(14, 117, 193, 0.18),
+      transparent 70%
+    ),
+    var(--gray-950);
+}
+
+.heroAurora {
+  opacity: 0.55 !important;
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: clamp(var(--spacing-64), 12vh, 144px) var(--spacing-24);
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-48);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.heroSubhead {
+  margin-top: var(--spacing-12);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-24);
+  font-weight: 500;
+  color: #8ec3ee;
+  line-height: 1.3;
+}
+
+.heroBody {
+  margin-top: var(--spacing-16);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-18);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.heroCta {
+  display: inline-block;
+  margin-top: var(--spacing-24);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-500);
+  padding: var(--spacing-12) var(--spacing-24);
+  border-radius: var(--radius-8);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.heroCta:hover {
+  opacity: 0.85;
+}
+
+/* Hero testimonial */
+
+.heroQuote {
+  margin-top: var(--spacing-32);
+  padding: var(--spacing-16) var(--spacing-24);
+  border-left: 3px solid var(--primary-500);
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 0 var(--radius-8) var(--radius-8) 0;
+}
+
+.heroQuoteText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.heroQuoteAuthor {
+  margin-top: var(--spacing-12);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Prose */
+
+.prose {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 64ch;
+  margin-bottom: var(--spacing-16);
+}
+
+.proseStrong {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* How it works */
+
+/* Office Hours carousels — shared card */
+.ohCarousel {
+  margin-top: var(--spacing-8);
+}
+
+.ohCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  height: 100%;
+  padding: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+  background-color: var(--background-elevated);
+  box-shadow: var(--card-shadow);
+}
+
+.ohCardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-12);
+  background-color: rgba(14, 117, 193, 0.1);
+  color: var(--primary-500);
+  margin-bottom: var(--spacing-4);
+}
+
+.ohCardNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-8);
+  background-color: rgba(14, 117, 193, 0.1);
+  color: var(--primary-500);
+  font-family: var(--font-family-technical);
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+}
+
+.ohCardTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ohCardBody {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Footer disclaimer — consolidated scope + billing */
+.disclaimer {
+  margin-top: var(--spacing-32);
+  padding: var(--spacing-16) var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-8);
+  background-color: var(--background-sunken);
+}
+
+.disclaimerText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+.processGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+}
+
+.processStep {
+  display: flex;
+  gap: var(--spacing-16);
+  align-items: flex-start;
+}
+
+.processNumber {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: var(--primary-500);
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-500);
+  border-radius: var(--radius-4);
+  flex-shrink: 0;
+}
+
+.processLabel {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.processDescription {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* What you can bring */
+
+.bringGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-12) var(--spacing-24);
+}
+
+.bringItem {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: var(--spacing-16);
+  position: relative;
+}
+
+.bringItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-500);
+}
+
+.bringNote {
+  margin-top: var(--spacing-24);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* What this isn't */
+
+.isntGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-24);
+}
+
+.isntCard {
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+  background-color: var(--background-sunken);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.isntTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+
+.isntBody {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Results */
+
+/* Featured work — Olympic (50/50 copy + image) */
+.featuredModule {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+  overflow: hidden;
+  background-color: var(--background-elevated);
+  box-shadow: var(--card-shadow);
+}
+
+.featuredCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-12);
+  padding: var(--spacing-48);
+}
+
+.featuredLabel {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-500);
+}
+
+.featuredStory {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.featuredLink {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--primary-500);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.featuredLink:hover {
+  opacity: 0.8;
+}
+
+.featuredImageWrap {
+  position: relative;
+  min-height: 340px;
+  background-color: var(--background-sunken);
+}
+
+.featuredBg {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Patel + Iyengar — case study cards (mirrors Work With Me) */
+.proofGrid {
+  margin-top: var(--spacing-24);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-24);
+}
+
+/* Testimonials — audit-page treatment */
+.testimonialNote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  max-width: 64ch;
+  margin-bottom: var(--spacing-24);
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-24);
+}
+
+.testimonialCard {
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-12);
+  padding: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+  background-color: var(--background-elevated);
+}
+
+.testimonialQuote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.testimonialAttribution {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.testimonialAuthor {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.testimonialRole {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Pricing — full-bleed dark band */
+.pricingBand {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-block: var(--spacing-48);
+  background-color: var(--gray-950);
+  padding-block: clamp(var(--spacing-48), 8vh, 96px);
+}
+
+.pricingGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(14, 117, 193, 0.18),
+    transparent 70%
+  );
+}
+
+.pricingInner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+.pricingHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-32);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-16);
+  line-height: 1.2;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-24);
+  margin-top: var(--spacing-32);
+  margin-bottom: var(--spacing-16);
+}
+
+.pricingCard {
+  box-shadow: var(--card-shadow);
+  position: relative;
+  padding: var(--spacing-32);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+  background-color: var(--background-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.pricingRecommended {
+  border-color: var(--primary-500);
+  border-width: 2px;
+}
+
+.pricingBadge {
+  position: absolute;
+  top: calc(-1 * var(--spacing-12));
+  left: var(--spacing-24);
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-500);
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: var(--radius-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricingName {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pricingPrice {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-40);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.pricingCadence {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-16);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  margin-left: var(--spacing-4);
+}
+
+.pricingDetail {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pricingNote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-tertiary);
+}
+
+/* FAQ */
+
+.inlineLink {
+  color: var(--primary-500);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Book / Cal embed */
+
+.bookSection {
+  padding-top: var(--spacing-48);
+}
+
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-16);
+  padding: var(--spacing-48) var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--primary-500);
+  border-radius: var(--radius-16);
+  background-color: var(--background-elevated);
+}
+
+.bookHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-32);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bookText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+.bookButton {
+  display: inline-block;
+  margin-top: var(--spacing-8);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-500);
+  padding: var(--spacing-16) var(--spacing-32);
+  border-radius: var(--radius-8);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.bookButton:hover {
+  opacity: 0.85;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .page {
+    padding-bottom: var(--spacing-48);
+  }
+
+  .content {
+    padding: 0 var(--spacing-16);
+  }
+
+  .heroInner {
+    padding: var(--spacing-48) var(--spacing-16);
+  }
+
+  .heroTitle {
+    font-size: var(--font-size-32);
+  }
+
+  .heroSubhead {
+    font-size: var(--font-size-18);
+  }
+
+  .heroBody {
+    font-size: var(--font-size-16);
+  }
+
+  .bringGrid,
+  .isntGrid,
+  .proofGrid,
+  .testimonialGrid,
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingInner {
+    padding: 0 var(--spacing-16);
+  }
+
+  .pricingHeading {
+    font-size: var(--font-size-24);
+  }
+
+  .featuredModule {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredImageWrap {
+    order: -1;
+    min-height: 220px;
+  }
+
+  .featuredCopy {
+    padding: var(--spacing-24);
+  }
+}

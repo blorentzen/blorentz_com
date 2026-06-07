@@ -2,7 +2,7 @@ import type { CaseStudy } from "./index";
 
 export const iyengarPlasticSurgery: CaseStudy = {
   slug: "iyengar-plastic-surgery",
-  title: "Iyengar Plastic Surgery",
+  title: "Website Audit and Redesign",
   client: "Iyengar Plastic Surgery",
   voice: "strategy",
   year: "2025 – 2026",
@@ -187,6 +187,9 @@ export const iyengarPlasticSurgery: CaseStudy = {
       "Working with Empac Design was an outstanding experience from start to finish. They created a beautiful, modern website for our surgery practice that truly reflects our vision and the level of care we provide to patients. Britton was thoughtful, detail-oriented, and incredibly easy to communicate with throughout the entire process. We've received so many compliments on how professional and polished the website looks. I would highly recommend Empac Design to any medical practice looking for someone that is creative, responsive, and genuinely invested in delivering exceptional results.",
     author: "Raj & Sneha Iyengar",
     role: "Iyengar Plastic Surgery",
+    initials: "RS",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/dr-iyengar/raj-and-sneha-iyengar.jpg",
   },
   challenges: [
     "Designing a digital presence credible enough for a Yale-trained surgeon. Every detail had to communicate expertise and trust without feeling cold or clinical.",

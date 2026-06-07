@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 // @ts-expect-error CDS type declarations reference CSS files not present in dist/types
 import { Input, Select, Textarea, Button } from "@empac/cascadeds";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { trackEvent } from "@/lib/analytics";
 import styles from "./page.module.css";
 
 export function WorkWithMeForm() {
@@ -48,6 +49,7 @@ export function WorkWithMeForm() {
         return;
       }
 
+      trackEvent("Contact Form");
       setStatus("success");
     } catch {
       setStatus("error");
@@ -93,7 +95,7 @@ export function WorkWithMeForm() {
         </div>
       </div>
       <div className={styles.formField} suppressHydrationWarning>
-        <label className={styles.formLabel}>What do you need help with? *</label>
+        <label className={styles.formLabel}>What are you interested in? *</label>
         <Select
           name="serviceType"
           size="medium"
@@ -101,9 +103,9 @@ export function WorkWithMeForm() {
           placeholder="Select one..."
           value={serviceType}
           options={[
-            { value: "custom-tool", label: "Custom Interactive Tool" },
-            { value: "website", label: "Website Build or Redesign" },
-            { value: "optimization", label: "Ongoing Optimization" },
+            { value: "project", label: "Starting a Project" },
+            { value: "audit", label: "Website/Marketing Audit" },
+            { value: "office-hours", label: "Office Hours" },
             { value: "not-sure", label: "Not Sure Yet" },
           ]}
           onChange={(val: string | string[]) => setServiceType(typeof val === "string" ? val : val[0])}
@@ -132,7 +134,7 @@ export function WorkWithMeForm() {
           onSuccess={setTurnstileToken}
           onExpire={() => setTurnstileToken(null)}
           options={{
-            theme: "dark",
+            theme: "light",
             size: "compact",
           }}
         />

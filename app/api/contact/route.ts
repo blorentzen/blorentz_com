@@ -39,7 +39,7 @@ function isRateLimited(ip: string): boolean {
 const MAX_FIELD_LENGTH = 500;
 const MAX_PROBLEM_LENGTH = 5000;
 
-const validServiceTypes = ["custom-tool", "website", "optimization", "not-sure"];
+const validServiceTypes = ["project", "audit", "office-hours", "not-sure"];
 
 export async function POST(request: Request) {
   const ip =
@@ -132,9 +132,9 @@ export async function POST(request: Request) {
   }
 
   const serviceLabels: Record<string, string> = {
-    "custom-tool": "Custom Interactive Tool",
-    website: "Website Build or Redesign",
-    optimization: "Ongoing Optimization",
+    project: "Starting a Project",
+    audit: "Website and Marketing Audit",
+    "office-hours": "Office Hours",
     "not-sure": "Not Sure Yet",
   };
 

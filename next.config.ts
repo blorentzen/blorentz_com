@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  redirects: async () => [
+    {
+      source: "/ai-build-audit",
+      destination: "/website-marketing-audit",
+      statusCode: 301,
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",
@@ -22,7 +29,7 @@ const nextConfig: NextConfig = {
             "font-src 'self' https://fonts.gstatic.com",
             "img-src 'self' data: https://cdn.empac.co https://www.googletagmanager.com",
             "media-src 'self' https://cdn.empac.co",
-            "frame-src https://www.youtube.com https://hearthis.at https://challenges.cloudflare.com",
+            "frame-src https://www.youtube.com https://hearthis.at https://challenges.cloudflare.com https://*.cloudflarestream.com",
             "connect-src 'self' https://plausible.io https://www.google-analytics.com https://challenges.cloudflare.com",
             "object-src 'none'",
             "base-uri 'self'",

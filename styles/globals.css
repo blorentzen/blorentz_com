@@ -17,7 +17,54 @@
 }
 
 html {
-  color-scheme: dark light;
+  color-scheme: light;
+}
+
+/*
+ * Force light — neutralize CDS's @media (prefers-color-scheme: dark) rules.
+ * The site is light-locked, but CDS ships OS-dark styling for a handful of
+ * components that fires off the VISITOR's OS setting (not our color-scheme).
+ * This block loads after the CDS import, so it wins. Re-assert light using
+ * semantic tokens. If any other CDS component shows up dark on a dark-OS
+ * machine, add its selector here.
+ */
+@media (prefers-color-scheme: dark) {
+  .empac-chip--default,
+  .empac-chip--outline {
+    background: var(--background-elevated);
+    color: var(--text-secondary);
+    border-color: var(--border-default);
+  }
+
+  .empac-chip--default.empac-chip--selected {
+    background: var(--background-sunken);
+    border-color: var(--primary-500);
+  }
+
+  .empac-input--floating,
+  .empac-input__floating-label {
+    background-color: var(--background-default);
+    color: var(--text-primary);
+    border-color: var(--border-default);
+  }
+
+  .empac-input--floating::placeholder {
+    color: var(--text-tertiary);
+  }
+
+  .empac-skeleton {
+    background-color: var(--background-sunken);
+  }
+
+  .empac-empty-state--subtle,
+  .empac-empty-state--bordered {
+    background-color: var(--background-elevated);
+    border-color: var(--border-default);
+  }
+
+  .empac-datepicker::-webkit-calendar-picker-indicator {
+    filter: none;
+  }
 }
 
 body {

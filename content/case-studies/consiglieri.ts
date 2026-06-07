@@ -102,6 +102,9 @@ export const consiglieri: CaseStudy = {
       "Our company, Consiglieri, hired Empac Design to restructure and redesign our website to add a more professional, modern feel to the content. The Empac team was collaborative in the early design process, efficient with their work and reviews, and delivered a final product at an incredibly high standard. They continued to support us even after the new site launched to ensure our complete satisfaction. We'd highly recommend Empac for design!",
     author: "Chris Noble",
     role: "Founder & Head of Operations, Consiglieri",
+    initials: "CN",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/consiglieri/chris-noble.avif",
   },
   challenges: [
     "Navigating multiple rounds of AI-generated imagery to find a visual direction that felt modern and elevated without falling into uncanny valley territory.",

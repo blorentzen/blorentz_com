@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { generalSans, spaceGrotesk, jetbrainsMono, inter } from "@/lib/fonts";
-import { ThemeScript } from "@/components/ThemeScript";
 import { LayoutShell } from "@/components/LayoutShell";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "@/styles/globals.css";
@@ -49,13 +48,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="light">
       <head>
-        <ThemeScript />
         <script
           defer
           data-domain="blorentz.com"
-          src="https://plausible.io/js/script.js"
+          src="https://plausible.io/js/script.tagged-events.outbound-links.js"
         />
         <GoogleAnalytics gaId="G-Y1WB7RGG4M" />
         <link

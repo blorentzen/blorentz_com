@@ -56,6 +56,8 @@ export function SiteFooter() {
           { href: "/blog", label: "Blog" },
           { href: "/about", label: "About" },
           { href: "/colophon", label: "Colophon" },
+          { href: "/legal/terms", label: "Terms" },
+          { href: "/legal/privacy", label: "Privacy" },
         ]}
       />
     </footer>

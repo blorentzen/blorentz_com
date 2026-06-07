@@ -32,6 +32,9 @@ export const drPatelRedesign: CaseStudy = {
       "Finding Empac and deciding to move forward with their team for my website design and maintenance was the best decision. They built an amazing website and I continuously get great feedback from my colleagues and patients! The referrals have been coming in and that is a testament to what they have built for me. Their team is always available and receptive to updates and changes needed!! If you need a website or need your site updated, Empac is the way to go. No regrets.",
     author: "Dr. Tarak Patel",
     role: "Double Board-Certified Plastic Surgeon",
+    initials: "TP",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/dr-patel/dr-patel-headshot.avif",
   },
   challenges: [
     "Building personalization without a server-side framework, using client-side JS web components and URL parameters to create a guided prospect journey.",

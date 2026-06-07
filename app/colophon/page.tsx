@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Colophon",
   description:
-    "How this site was built — the tech stack, typography, and tools behind blorentz.com.",
+    "How this site was built: the tech stack, typography, and tools behind blorentz.com.",
 };
 
 const stack = [

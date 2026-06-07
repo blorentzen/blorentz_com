@@ -2,80 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getCaseStudiesByCategory } from "@/content/case-studies";
 import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
-import { PageHeader } from "@/components/PageHeader/PageHeader";
 import { Reveal } from "@/components/Reveal/Reveal";
 import { Section } from "@/components/Section/Section";
 import { StaggerGrid } from "@/components/StaggerGrid/StaggerGrid";
+import { Aurora } from "@/components/Aurora/Aurora";
+// @ts-expect-error CDS type declarations reference CSS files not present in dist/types
+import { Avatar, Icon } from "@empac/cascadeds";
 import { WorkWithMeForm } from "./WorkWithMeForm";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Work With Me",
   description:
-    "I build custom interactive tools, websites, and applications for established businesses with complex problems. Consulting engagements through blorentz.com.",
+    "I build custom tools, websites, and applications for established businesses with expensive problems to solve. Start with an audit, monthly advisory, or a full project.",
 };
 
-const services = [
-  {
-    title: "Custom Interactive Tools",
-    description:
-      "Calculators, estimators, quizzes, booking systems, and custom web applications. These are the tools that sit inside your sales and business processes and do the work your team is currently doing manually or not doing at all. I design and build them from scratch, from user research through shipping to production.",
-    signal:
-      'If your customers are calling you to ask "how much does this cost?" or "which option is right for me?" that\'s usually where a custom tool pays for itself.',
-  },
-  {
-    title: "Website Builds and Redesigns",
-    description:
-      "Not a template, and definitely not a commodity redesign. I build websites centered around a strategy, with clear goals, proper analytics, and content that actually drives people toward a decision. I work in Webflow for CMS-driven sites and custom code for anything that needs more flexibility.",
-    signal:
-      "If you've outgrown your current site and you know it, but you need someone who understands both the business goals and the technical execution, this is the service for you.",
-  },
-  {
-    title: "Ongoing Optimization",
-    description:
-      "The work isn't done once a project goes lives. I offer retainer engagements for continuous improvements including performance optimization, SEO, content updates, analytics reviews, and strategic recommendations. I rotate focus areas monthly based on what's actually driving sales and conversions for your business.",
-    signal:
-      "This isn't a maintenance plan... it's an ongoing partnership where I'm actively working to make your web and digital investments perform better over time.",
-  },
-];
-
 const goodFit = [
-  "You're bringing in decent revenue, but would like to find ways to increase revenue through web and digital channels",
-  "Your sales or business processes are complex enough that customers struggle to self-serve, or employees are having a hard time doing their job",
-  "You've outgrown template solutions and need something customized and scalable",
-  "You're the decision-maker or you have direct access to them",
-  "A $10k-25k starting price for a project doesn't scare you because you understand the ROI",
+  "You're bringing in real revenue and want to grow it through your web and digital channels",
+  "Your sales or business processes are complex enough that customers struggle to self-serve, or your team is stuck doing work software should handle",
+  "You've outgrown template solutions and need something custom and built to scale",
+  "You're the decision-maker, or you have direct access to them",
+  "A project starting at $10k doesn't scare you, because you understand the ROI",
 ];
 
 const notFit = [
   "You're pre-revenue and need a cheap landing page",
   "You're shopping for the lowest price",
   "You need something done yesterday with no discovery process",
-  "You want to manage the project through a committee",
-  "You want someone that will only execute on your vision, no questions asked"
-];
-
-const process = [
-  {
-    label: "Discovery",
-    description:
-      "We will always start with the problem. I need to understand your business, your customers, and where the friction lives before I design or build anything. This usually takes 1-2 weeks depending on complexity.",
-  },
-  {
-    label: "Design & Prototype",
-    description:
-      "Everything gets designed in Figma before code is written. You'll see wireframes, high-fidelity mockups, and interactive prototypes. You'll know exactly what you're getting before development starts.",
-  },
-  {
-    label: "Build",
-    description:
-      "I write the code. Front-end, back-end, integrations, analytics... and whatever the project needs. I use AI-assisted development tools to move faster without cutting corners on quality. Everything I build is maintainable, accessible, and built to last.",
-  },
-  {
-    label: "Launch & Optimize",
-    description:
-      "Projects include 30 days of post-launch support. After that, most clients move into a retainer for ongoing optimization. My goal is to build something that'll drive value for your business long-term, and the best way to deliver is to continue the partnership afterwards.",
-  },
+  "You want to run the project through a committee",
+  "You want someone who'll only execute your vision, no questions asked",
 ];
 
 const testimonials = [
@@ -84,18 +39,27 @@ const testimonials = [
       "Finding Empac and deciding to move forward with their team for my website design and maintenance was the best decision. They built an amazing website and I continuously get great feedback from my colleagues and patients! The referrals have been coming in and that is a testament to what they have built for me. Their team is always available and receptive to updates and changes needed!! If you need a website or need your site updated, Empac is the way to go. No regrets.",
     author: "Dr. Tarak Patel",
     role: "Double Board-Certified Plastic Surgeon",
+    initials: "TP",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/dr-patel/dr-patel-headshot.avif",
   },
   {
     quote:
       "They created a beautiful, modern website that truly reflects our vision and the level of care we provide to patients. We've received so many compliments on how professional and polished the website looks. I would highly recommend Empac to any medical practice looking for someone that is creative, responsive, and genuinely invested in delivering exceptional results.",
     author: "Raj & Sneha Iyengar",
     role: "Iyengar Plastic Surgery",
+    initials: "RS",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/dr-iyengar/raj-and-sneha-iyengar.jpg",
   },
   {
     quote:
       "Our company, Consiglieri, hired Empac Design to restructure and redesign our website to add a more professional, modern feel to the content. The Empac team was collaborative in the early design process, efficient with their reviews, and delivered a final product at an incredibly high standard. They continued to support us even after the new site launched to ensure our complete satisfaction. We'd highly recommend Empac for design!",
     author: "Chris Noble",
     role: "Founder & Head of Operations, Consiglieri",
+    initials: "CN",
+    image:
+      "https://cdn.empac.co/main/assets/images/work-samples/consiglieri/chris-noble.avif",
   },
 ];
 
@@ -104,53 +68,148 @@ export default function WorkWithMePage() {
 
   return (
     <div className={styles.page}>
-      {/* Hero */}
+      {/* Hero — full-bleed dark band */}
       <Reveal>
-        <header className={styles.hero}>
-          <h1 className={styles.heroTitle}>
-            I build things that solve expensive problems.
-          </h1>
-          <p className={styles.heroSubhead}>
-            I offer custom interactive tool builds, website builds and redesigns, and ongoing
-            optimization for established businesses around the Puget Sound. I work directly with
-            founders and decision-makers who need someone that can think through
-            the strategy AND build the thing.
-          </p>
-          <a href="#contact" className={styles.heroCta}>
-            Start a Conversation
-          </a>
+        <header className={`${styles.heroBand} on-dark`}>
+          <Aurora className={styles.heroAurora} />
+          <div className={styles.heroInner}>
+            <div className={styles.heroContent}>
+              <h1 className={styles.heroTitle}>
+                I build things that solve expensive problems.
+              </h1>
+              <p className={styles.heroSubhead}>
+                Custom tools, websites, and applications for established businesses
+                around the Puget Sound. I work directly with founders and
+                decision-makers who need someone who can think through the strategy
+                and build the thing.
+              </p>
+              <a href="#start" className={styles.heroCta}>
+                Start a Conversation
+              </a>
+            </div>
+          </div>
         </header>
       </Reveal>
 
-      {/* What I Do */}
+      <div className={styles.content}>
+      {/* Three Ways to Start */}
       <Reveal>
-        <Section heading="What I Do">
-          <p className={styles.sectionIntro}>
-            There's three ways we can work together. Each one starts with understanding
-            what&apos;s actually costing you money, then building the thing that
-            will solve your challenges.
-          </p>
-          <div className={styles.serviceGrid}>
-            {services.map((service) => (
-              <div key={service.title} className={styles.serviceCard}>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceDescription}>
-                  {service.description}
-                </p>
-                <p className={styles.serviceSignal}>{service.signal}</p>
+        <section id="start">
+          <Section heading="Three ways we can work together.">
+            <p className={styles.sectionIntro}>
+              Pick the door that fits where you are. You don&apos;t need to know
+              exactly what you need right away... all you need to know is whether you want a read on
+              what you&apos;ve got, a senior voice in your corner, or someone to
+              build the thing.
+            </p>
+
+            {/* Anchor door — Start a Project */}
+            <a href="#contact" className={styles.doorAnchor}>
+              <div className={styles.doorAnchorMain}>
+                <span className={styles.doorAnchorIcon}>
+                  <Icon name="tool" size="32" />
+                </span>
+                <div className={styles.doorAnchorText}>
+                  <span className={styles.doorLabel}>Custom work</span>
+                <h3 className={styles.doorAnchorTitle}>Start a project together.</h3>
+                <p className={styles.doorAnchorDescription}>
+                  Custom tools, website builds and redesigns, and ongoing
+                  optimization for businesses with a challenging business and marketing problems. This is
+                  the core of what I do: developing web and marketing strategies, building custom apps and solutions, and it&apos;s all done by myself from start to
+                  finish.
+                  </p>
+                </div>
               </div>
+              <span className={styles.doorAnchorCta}>Let&apos;s get started</span>
+            </a>
+
+            {/* On-ramps — Audit + Office Hours */}
+            <div className={styles.doorGrid}>
+              <Link href="/website-marketing-audit" className={styles.door}>
+                <span className={styles.doorIcon}>
+                  <Icon name="search" size="24" />
+                </span>
+                <span className={styles.doorLabel}>Website and marketing audits</span>
+                <h3 className={styles.doorTitle}>Let me audit what you&apos;ve built.</h3>
+                <p className={styles.doorDescription}>
+                  Have you built something with Lovable, Bolt, or Cursor? I&apos;ll provide you a read on
+                  whether it&apos;ll actually drive business, and what&apos;s going to slow you
+                  down when you try to scale your operation. It&apos;s all fixed scope, starting at $1,500.
+                </p>
+                <span className={styles.doorCta}>Explore the audit &rarr;</span>
+              </Link>
+              <Link href="/office-hours" className={styles.door}>
+                <span className={styles.doorIcon}>
+                  <Icon name="calendar" size="24" />
+                </span>
+                <span className={styles.doorLabel}>Monthly advisory</span>
+                <h3 className={styles.doorTitle}>Join my Office Hours.</h3>
+                <p className={styles.doorDescription}>
+                  I&apos;ll be your senior voice in your corner on a monthly basis. Includes one hour of my time, written
+                  recaps, and direct answers to what&apos;s slowing you down. There&apos;s no need for a retainer commitment, and it starts at $200/mo.
+                </p>
+                <span className={styles.doorCta}>Explore Office Hours &rarr;</span>
+              </Link>
+            </div>
+          </Section>
+        </section>
+      </Reveal>
+
+      {/* Proof — case studies */}
+      <Reveal>
+        <Section heading="Here's what this looks like in practice.">
+          <StaggerGrid className={styles.proofGrid}>
+            {clientWork.map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </StaggerGrid>
+          <div className={styles.proofCta}>
+            <Link href="/work" className={styles.proofLink}>
+              Check out all work &rarr;
+            </Link>
+          </div>
+        </Section>
+      </Reveal>
+
+      {/* What Clients Say */}
+      <Reveal>
+        <Section heading="Here's what my clients have to say.">
+          <p className={styles.testimonialNote}>
+            You&apos;ll see &ldquo;Empac&rdquo; mentioned in a few of these. That&apos;s
+            the freelance business I ran this client work under. The work itself, start to
+            finish, was between myself and the client.
+          </p>
+          <div className={styles.testimonialGrid}>
+            {testimonials.map((t) => (
+              <figure key={t.author} className={styles.testimonialCard}>
+                <Avatar
+                  src={t.image}
+                  initials={t.initials}
+                  alt={t.author}
+                  size="xlarge"
+                  shape="circle"
+                  color="primary"
+                />
+                <blockquote className={styles.testimonialQuote}>
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className={styles.testimonialAttribution}>
+                  <span className={styles.testimonialAuthor}>{t.author}</span>
+                  <span className={styles.testimonialRole}>{t.role}</span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </Section>
       </Reveal>
 
-      {/* Who This Is For */}
+      {/* Who This Is For — final gut-check before the ask */}
       <Reveal>
-        <Section heading="Who This Is For">
+        <Section heading="Who these services are for.">
           <p className={styles.sectionIntro}>
-            I work best with established businesses that already have revenue coming in and has a
-            complex problem to solve. Here&apos;s what a good fit usually looks
-            like:
+            I work best with established businesses that already have revenue coming
+            in and complex website and marketing problems to solve. Here&apos;s what a good fit usually
+            looks like.
           </p>
           <div className={styles.fitGrid}>
             <div className={styles.fitColumn}>
@@ -158,7 +217,10 @@ export default function WorkWithMePage() {
               <ul className={styles.fitList}>
                 {goodFit.map((item) => (
                   <li key={item} className={styles.fitItem}>
-                    {item}
+                    <span className={styles.fitIcon}>
+                      <Icon name="circle-check" size="18" />
+                    </span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -170,105 +232,24 @@ export default function WorkWithMePage() {
               <ul className={styles.fitList}>
                 {notFit.map((item) => (
                   <li key={item} className={styles.fitItem}>
-                    {item}
+                    <span className={`${styles.fitIcon} ${styles.fitIconNot}`}>
+                      <Icon name="circle-x" size="18" />
+                    </span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
-          <p className={styles.fitNote}>
-            I keep my client roster small on purpose. I&apos;m a Senior Creative
-            Development Manager at T&#8209;Mobile during the day, and I take on
-            select consulting engagements because I enjoy the work and I&apos;m
-            good at it. That means I&apos;m selective about what I take on, but
-            the people I work with get my full attention and expertise.
-          </p>
         </Section>
-      </Reveal>
-
-      {/* How I Work */}
-      <Reveal>
-        <Section heading="How I Work">
-          <p className={styles.sectionIntro}>
-            Every engagement follows the same core process.
-          </p>
-          <div className={styles.processGrid}>
-            {process.map((step, i) => (
-              <div key={step.label} className={styles.processStep}>
-                <span className={styles.processNumber}>{i + 1}</span>
-                <div>
-                  <h3 className={styles.processLabel}>{step.label}</h3>
-                  <p className={styles.processDescription}>
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-      </Reveal>
-
-      {/* Proof */}
-      <Reveal>
-        <Section heading="Proof">
-          <p className={styles.sectionIntro}>
-            Here&apos;s what this looks like in practice.
-          </p>
-          <StaggerGrid className={styles.proofGrid}>
-            {clientWork.map((study) => (
-              <CaseStudyCard key={study.slug} study={study} />
-            ))}
-          </StaggerGrid>
-          <div className={styles.proofCta}>
-            <Link href="/work" className={styles.proofLink}>
-              See all work &rarr;
-            </Link>
-          </div>
-        </Section>
-      </Reveal>
-
-      {/* What Clients Say */}
-      <Reveal>
-        <Section heading="What Clients Say">
-          <div className={styles.testimonialGrid}>
-            {testimonials.map((t) => (
-              <blockquote key={t.author} className={styles.testimonial}>
-                <p className={styles.testimonialQuote}>
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <footer className={styles.testimonialAttribution}>
-                  <span className={styles.testimonialAuthor}>{t.author}</span>
-                  <span className={styles.testimonialRole}>{t.role}</span>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-        </Section>
-      </Reveal>
-
-      {/* Billing Note */}
-      <Reveal>
-        <div className={styles.billingNote}>
-          <p className={styles.billingText}>
-            All consulting engagements are billed through Empac, my registered
-            business. Empac handles the contracts, invoicing, and technical
-            infrastructure for every project.
-          </p>
-          <p className={styles.billingText}>
-            You&apos;re hiring me, and Empac is how the work gets delivered. There's no
-            account managers, continual handoffs, &ldquo;let me check with my
-            team.&rdquo; with my projects.
-          </p>
-        </div>
       </Reveal>
 
       {/* Start a Conversation */}
       <Reveal>
         <section id="contact" className={styles.contactSection}>
-          <h2 className={styles.contactHeading}>Let's Start a Conversation</h2>
+          <h2 className={styles.contactHeading}>Let&apos;s set up a chat.</h2>
           <p className={styles.sectionIntro}>
-            If any of this sounds like what you&apos;re dealing with, or something you feel your business could benefit from, let&apos;s
-            talk.
+            Would you like support with your website or marketing? Let&apos;s get a meeting on the books to talk shop.
           </p>
           <WorkWithMeForm />
           <p className={styles.contactFallback}>
@@ -279,6 +260,7 @@ export default function WorkWithMePage() {
           </p>
         </section>
       </Reveal>
+      </div>
     </div>
   );
 }

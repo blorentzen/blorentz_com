@@ -55,6 +55,13 @@
   margin-top: 0;
 }
 
+/* Let the bottom links wrap instead of overflowing on small screens */
+.footer :global(.empac-footer__bottom-links) {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: var(--spacing-8);
+}
+
 @media (max-width: 768px) {
   .connectSection {
     padding: var(--spacing-24) var(--spacing-16);

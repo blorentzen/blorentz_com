@@ -51,6 +51,8 @@ export interface CaseStudy {
     quote: string;
     author: string;
     role: string;
+    image?: string;
+    initials?: string;
   };
   status?: "complete" | "in-progress";
 }

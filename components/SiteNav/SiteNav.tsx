@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle, Icon, icons } from "@empac/cascadeds";
+import { Icon, icons } from "@empac/cascadeds";
 import styles from "./SiteNav.module.css";
 
 const navLinks = [
@@ -137,7 +137,6 @@ export function SiteNav() {
         </div>
 
         <div className={styles.actions}>
-          <ThemeToggle />
           <button
             className={styles.hamburger}
             onClick={() => setMobileOpen(!mobileOpen)}
