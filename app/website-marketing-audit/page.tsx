@@ -14,7 +14,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Website and Marketing Audit",
   description:
-    "A senior read on whether your website and marketing are actually doing commercial work, and what to change if they aren't. Fixed scope, starting at $1,500.",
+    "Get a senior read on whether your website and marketing are actually working for your business, and what to change if it isn't. All fixed scope, starting at $1,500.",
   alternates: { canonical: "https://blorentz.com/website-marketing-audit" },
 };
 
