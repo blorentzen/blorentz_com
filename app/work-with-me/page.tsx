@@ -104,7 +104,7 @@ export default function WorkWithMePage() {
             </p>
 
             {/* Anchor door — Start a Project */}
-            <a href="#contact" className={styles.doorAnchor}>
+            <Link href="/custom-work" className={styles.doorAnchor}>
               <div className={styles.doorAnchorMain}>
                 <span className={styles.doorAnchorIcon}>
                   <Icon name="tool" size="32" />
@@ -120,8 +120,8 @@ export default function WorkWithMePage() {
                   </p>
                 </div>
               </div>
-              <span className={styles.doorAnchorCta}>Let&apos;s get started</span>
-            </a>
+              <span className={styles.doorAnchorCta}>Explore services</span>
+            </Link>
 
             {/* On-ramps — Audit + Office Hours */}
             <div className={styles.doorGrid}>

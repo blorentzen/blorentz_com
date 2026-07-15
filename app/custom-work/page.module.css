@@ -1,0 +1,935 @@
+.page {
+  padding-bottom: var(--spacing-64);
+  overflow-x: clip;
+  background-color: var(--background-secondary);
+}
+
+.content {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+/* Hero — full-bleed dark band (matches the Work With Me page family) */
+
+.heroBand {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-bottom: var(--spacing-48);
+  background:
+    radial-gradient(
+      ellipse 70% 60% at 50% -10%,
+      rgba(14, 117, 193, 0.18),
+      transparent 70%
+    ),
+    var(--gray-950);
+}
+
+.heroAurora {
+  opacity: 0.55 !important;
+  z-index: 0;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: clamp(var(--spacing-48), 10vh, 120px) var(--spacing-24);
+}
+
+.heroContent {
+  max-width: 900px;
+}
+
+.heroTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-40);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.heroSubhead {
+  margin-top: var(--spacing-16);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-18);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 68ch;
+}
+
+/* Tabs shell */
+
+.tabs {
+  margin-top: var(--spacing-32);
+}
+
+/* Tab panel */
+
+.panel {
+  padding-top: var(--spacing-40);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-48);
+}
+
+.panelLead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.empacTag {
+  align-self: flex-start;
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-500);
+  background: color-mix(in srgb, var(--primary-500) 12%, transparent);
+  padding: var(--spacing-4) var(--spacing-12);
+  border-radius: var(--radius-full);
+}
+
+.lead {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-20);
+  line-height: 1.6;
+  color: var(--text-primary);
+  max-width: 62ch;
+}
+
+/* Price groups */
+
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.groupTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.groupNote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-tertiary);
+  max-width: 68ch;
+}
+
+/* Offer cards (2-up grid) */
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  padding: var(--spacing-24);
+  background: var(--background-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+}
+
+.offerHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.offerName {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.offerPrice {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-32);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-8);
+}
+
+.offerPriceNote {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.offerDesc {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.offerFinancing {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+/* Range anchors (low/high, inside offer cards) */
+
+.anchors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-top: var(--spacing-16);
+  margin: var(--spacing-4) 0 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.anchorRow {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: var(--spacing-12);
+  align-items: baseline;
+}
+
+.anchorLabel {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary-500);
+  margin: 0;
+}
+
+.anchorText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Coverage checklist (inside offer cards) */
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  list-style: none;
+  padding: var(--spacing-16) 0 0;
+  margin: var(--spacing-4) 0 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-8);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.checkMark {
+  flex-shrink: 0;
+  font-size: var(--font-size-14);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--primary-500);
+}
+
+.checkCarryover {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Icon cards (focus areas, example project types) */
+
+.cardGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+/* The step group flips from a vertical list to an even 3-column layout. */
+.steps.threeUp {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+/* All card grids share one responsive column system: 3 → 2 → 1. */
+@media (max-width: 900px) {
+  .offerGrid,
+  .cardGrid,
+  .scenarioGrid,
+  .steps.threeUp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .offerGrid,
+  .cardGrid,
+  .scenarioGrid,
+  .steps.threeUp {
+    grid-template-columns: 1fr;
+  }
+}
+
+.iconCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding: var(--spacing-24);
+  background: var(--background-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-12);
+  background-color: color-mix(in srgb, var(--primary-500) 10%, transparent);
+  color: var(--primary-500);
+  margin-bottom: var(--spacing-4);
+}
+
+.iconCardTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.iconCardDesc {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* List blocks */
+
+.listBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.listLabel {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  position: relative;
+  padding-left: var(--spacing-24);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 68ch;
+}
+
+.listItem::before {
+  content: "";
+  position: absolute;
+  left: var(--spacing-4);
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--primary-500);
+}
+
+/* "Best for" line (inside plan cards) */
+
+.bestFor {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  padding-top: var(--spacing-16);
+  margin-top: var(--spacing-4);
+  border-top: 1px solid var(--border-default);
+}
+
+.bestForLabel {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary-500);
+  margin-right: var(--spacing-4);
+}
+
+/* Section intro paragraph (scenarios, building blocks) */
+
+.sectionIntro {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 74ch;
+}
+
+/* Scenario cards (Photo & Video projects, Custom Package engagements) */
+
+.scenarioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.scenarioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+.scenarioCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding: var(--spacing-24);
+  background: var(--background-default);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+}
+
+.scenarioTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-18);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.scenarioSubtitle {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+.scenarioBase {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-4);
+}
+
+.scenarioBaseLabel {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary-500);
+  margin-right: var(--spacing-4);
+}
+
+.scenarioWhy,
+.scenarioSummary {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  padding-top: var(--spacing-12);
+  margin-top: var(--spacing-4);
+  border-top: 1px solid var(--border-default);
+}
+
+.scenarioSummary {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Building blocks table (Custom Package) */
+
+.buildingBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+}
+
+.blockTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  background: var(--background-default);
+}
+
+.blockTh {
+  text-align: left;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--background-secondary);
+  padding: var(--spacing-12) var(--spacing-16);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.blockTable td {
+  padding: var(--spacing-16);
+  border-bottom: 1px solid var(--border-default);
+  vertical-align: top;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.blockTable tr:last-child td {
+  border-bottom: none;
+}
+
+.blockName {
+  font-family: var(--font-family-display) !important;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+
+.blockPricing {
+  color: var(--text-primary) !important;
+  white-space: nowrap;
+}
+
+/* Numbered steps (Custom Package) */
+
+.stepGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step {
+  display: flex;
+  gap: var(--spacing-16);
+  align-items: flex-start;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: color-mix(in srgb, var(--primary-500) 12%, transparent);
+  color: var(--primary-500);
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 700;
+}
+
+.stepBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.stepTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stepDesc {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 68ch;
+}
+
+/* Note strip */
+
+.noteStrip {
+  padding: var(--spacing-16) var(--spacing-24);
+  border-left: 3px solid var(--primary-500);
+  background: color-mix(in srgb, var(--primary-500) 6%, var(--background-default));
+  border-radius: var(--radius-8);
+}
+
+.noteText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Contextual proof (testimonial + case studies) */
+
+/* Shared "Previous projects" section (below the tabs) */
+
+.previousProjects {
+  margin-top: var(--spacing-48);
+  padding-top: var(--spacing-48);
+  border-top: 1px solid var(--border-default);
+}
+
+.caseStudyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+@media (max-width: 900px) {
+  .caseStudyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .caseStudyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonials — 3-up, equal-height cards (matches the Work With Me page). */
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-24);
+}
+
+@media (max-width: 768px) {
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-12);
+  padding: var(--spacing-24);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-12);
+  background-color: var(--background-elevated);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 20px -6px rgba(15, 23, 42, 0.12);
+}
+
+.testimonialQuote {
+  margin: 0;
+  flex-grow: 1;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonialAttribution {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.testimonialAuthor {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-14);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.testimonialRole {
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Iyengar story module (ported from the audit page) */
+
+.story {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+}
+
+.storyModule {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--radius-16);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 20px -6px rgba(15, 23, 42, 0.12);
+  padding: var(--spacing-48);
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+}
+
+.storyModuleBg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.storyModule::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.42) 50%,
+    rgba(0, 0, 0, 0.32) 100%
+  );
+}
+
+.storyModuleContent {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.storyModuleHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-32);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.storyText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+}
+
+.statBand :global(.empac-stat-card) {
+  background-color: var(--background-elevated);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 20px -6px rgba(15, 23, 42, 0.12);
+}
+
+.beforeAfter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-16);
+}
+
+.baFigure {
+  position: relative;
+  margin: 0;
+}
+
+.baLabel {
+  position: absolute;
+  top: var(--spacing-12);
+  left: var(--spacing-12);
+  z-index: 2;
+  font-family: var(--font-family-technical);
+  font-size: var(--font-size-12);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: var(--spacing-4) var(--spacing-8);
+  border-radius: var(--radius-4);
+}
+
+.baLabelAfter {
+  background-color: var(--primary-500);
+}
+
+.baImageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-12);
+  border: 1px solid var(--border-default);
+  background-color: var(--background-sunken);
+}
+
+.baImage {
+  object-fit: cover;
+  object-position: top;
+}
+
+.storyLink {
+  display: inline-block;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  color: var(--primary-500);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.storyLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .beforeAfter {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clarifier note (offer / icon-card disambiguation) */
+
+.clarifier {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+}
+
+/* Page CTA module */
+
+.ctaModule {
+  margin-top: var(--spacing-48);
+  padding: var(--spacing-48) var(--spacing-32);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-16);
+  background: color-mix(in srgb, var(--primary-500) 5%, var(--background-default));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-12);
+}
+
+.ctaHeading {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-28);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ctaText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 56ch;
+}
+
+.ctaButton {
+  display: inline-block;
+  margin-top: var(--spacing-8);
+  padding: var(--spacing-12) var(--spacing-24);
+  background: var(--primary-500);
+  color: #fff;
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-16);
+  font-weight: 600;
+  border-radius: var(--radius-8);
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.ctaButton:hover {
+  background: color-mix(in srgb, var(--primary-500) 88%, black);
+}
+
+/* Persistent terms footer */
+
+.terms {
+  margin-top: var(--spacing-48);
+  padding-top: var(--spacing-24);
+  border-top: 1px solid var(--border-default);
+}
+
+.termsText {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  line-height: 1.6;
+  color: var(--text-tertiary);
+  max-width: 72ch;
+}
+
+.termsLabel {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: var(--font-size-32);
+  }
+}

@@ -235,9 +235,6 @@ export default function WebsiteMarketingAuditPage() {
               <a href="#consultation" className={styles.heroCta}>
                 Request a Consultation
               </a>
-              <p className={styles.heroNote}>
-                $1,500–$10,000+ depending on scope. Limited availability each month.
-              </p>
             </div>
           </div>
         </header>

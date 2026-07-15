@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       destination: "/website-marketing-audit",
       statusCode: 301,
     },
+    {
+      source: "/rates",
+      destination: "/custom-work",
+      statusCode: 301,
+    },
   ],
   headers: async () => [
     {
