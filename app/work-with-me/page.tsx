@@ -134,7 +134,7 @@ export default function WorkWithMePage() {
                 <p className={styles.doorDescription}>
                   Have you built something with Lovable, Bolt, or Cursor? I&apos;ll provide you a read on
                   whether it&apos;ll actually drive business, and what&apos;s going to slow you
-                  down when you try to scale your operation. It&apos;s all fixed scope, starting at $1,500.
+                  down when you try to scale your operation. It&apos;s all fixed scope, starting at $500.
                 </p>
                 <span className={styles.doorCta}>Explore the audit &rarr;</span>
               </Link>

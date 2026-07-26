@@ -14,7 +14,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Website and Marketing Audit",
   description:
-    "Get a senior read on whether your website and marketing are actually working for your business, and what to change if it isn't. All fixed scope, starting at $1,500.",
+    "Get a senior read on whether your website and marketing are actually working for your business, and what to change if it isn't. All fixed scope, starting at $500.",
   alternates: { canonical: "https://blorentz.com/website-marketing-audit" },
 };
 
@@ -115,7 +115,7 @@ const testimonials = [
 const tiers = [
   {
     name: "Audit",
-    price: "$1,500",
+    price: "$500",
     pitch:
       "Purely a diagnostic view into your business. I’ll look at what you've built, tell you what you got right, what you got wrong, and give you a focused list of next steps. This is best for builders who want senior eyes on what they've built and plan to handle implementation on their own.",
     includesLabel: "Includes:",
@@ -130,7 +130,7 @@ const tiers = [
   },
   {
     name: "Roadmap",
-    price: "$3,000",
+    price: "$1,000",
     pitch:
       "Everything in the audit, plus a detailed roadmap of specific apps, services, and tools to use for the improvements. This is the tier for clients who want to know not just what to fix but how, including which platform to use, which integration to include, and which workflows should be run. You walk away with a clear “use this, not that” implementation plan.",
     includesLabel: "Includes everything in Audit, plus:",
@@ -139,19 +139,6 @@ const tiers = [
       "“Use this, not that” guidance on apps and integrations",
       "Risk-ranked sequence that establishes what to tackle first, second, third, and afterwards",
     ],
-  },
-  {
-    name: "The Works",
-    price: "Starting at $10,000",
-    pitch:
-      "The full meal deal. You get the audit, roadmap, and full implementation done by me. Best for clients who want the audit findings turned into a finished result without going back into the market to find someone to execute. Scope and pricing depend on what the audit surfaces, and we’ll lock both in writing before any project work begins.",
-    includesLabel: "Includes everything in Roadmap, plus:",
-    includes: [
-      "Custom-scoped implementation of audit recommendations",
-      "All design, development, and integration work",
-      "Direct project management by me, with no handoffs or account managers involved",
-    ],
-    note: "If you've already booked an Audit or Roadmap with me, that fee credits 100% towards this tier (within 90 days of audit delivery).",
   },
 ];
 
@@ -185,7 +172,7 @@ const faqs = [
   },
   {
     q: "Will you implement the changes for me?",
-    a: "The Audit and Roadmap tiers are diagnosis, not treatment. If you want me to execute on the fixes, The Works tier covers that, scoped to what we find and priced based on the actual work involved. The audit fee credits 100% toward The Works within 90 days, so you don't pay twice for the same diagnostic work. The walkthrough call after the report is where those conversations happen naturally.",
+    a: "The Audit and Roadmap tiers are diagnosis, not treatment. If you want me to execute on the fixes, that's a custom project, scoped to what we find and priced based on the actual work involved. You can see the design and development services on the Custom Work page. Your Audit or Roadmap fee credits 100% toward that build within 90 days, so you don't pay twice for the same diagnostic work. The walkthrough call after the report is where those conversations happen naturally.",
   },
   {
     q: "How fast do I get the audit?",
@@ -205,7 +192,7 @@ const faqs = [
   },
   {
     q: "Can I work with you ongoing after the audit?",
-    a: "Yes, but it's not assumed. The audit ends with paths: do it yourself with the roadmap, bring me on for The Works to execute the fixes, or move into Office Hours for ongoing monthly advisory. You pick. The walkthrough call is where we talk through which path makes sense.",
+    a: "Yes, but it's not assumed. The audit ends with paths: do it yourself with the roadmap, bring me on for a custom build to execute the fixes, or move into Office Hours for ongoing monthly advisory. You pick. The walkthrough call is where we talk through which path makes sense.",
   },
 ];
 
@@ -430,9 +417,9 @@ export default function WebsiteMarketingAuditPage() {
               Three ways we can work together.
             </h2>
             <p className={styles.sectionIntro}>
-              Pick the depth that fits where you are. Any Audit or Roadmap fee credits
-              100% toward a custom project (The Works) within 90 days, so you&apos;re
-              never paying twice for the same work.
+              Start with a diagnosis, then, if you want, I&apos;ll build the fixes.
+              Any Audit or Roadmap fee credits 100% toward a custom project within
+              90 days, so you&apos;re never paying twice for the same work.
             </p>
             <div className={styles.pricingGrid}>
               {tiers.map((tier) => (
@@ -453,9 +440,25 @@ export default function WebsiteMarketingAuditPage() {
                       </li>
                     ))}
                   </ul>
-                  {tier.note && <p className={styles.pricingNote}>{tier.note}</p>}
                 </div>
               ))}
+            </div>
+
+            <div className={styles.buildBridge}>
+              <div className={styles.buildBridgeText}>
+                <h3 className={styles.buildBridgeHeading}>
+                  Or skip ahead and let me build it.
+                </h3>
+                <p className={styles.buildBridgeBody}>
+                  If the audit is only going to confirm you need a rebuild, we
+                  can go straight to it. Design, custom websites, and full
+                  applications are all laid out on the Custom Work page, and your
+                  Audit or Roadmap fee credits 100% toward the build.
+                </p>
+              </div>
+              <Link href="/custom-work" className={styles.buildBridgeCta}>
+                Explore Custom Work &rarr;
+              </Link>
             </div>
           </div>
         </section>
