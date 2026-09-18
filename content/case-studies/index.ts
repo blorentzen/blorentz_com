@@ -13,11 +13,18 @@ export interface ComparisonPair {
   after: { src: string; alt: string };
 }
 
+export interface DecisionCard {
+  title: string;
+  desc: string;
+  code?: string;
+}
+
 export type ContentBlock =
   | { type: "text"; content: string }
   | { type: "gallery"; title?: string; description?: string; images: GalleryImage[]; aspectRatio?: "3/2" | "1/1" | "4/3" | "16/9" }
   | { type: "video"; src: string; title: string; description?: string; poster?: string; aspect?: string }
-  | { type: "comparison"; title?: string; pairs: ComparisonPair[] };
+  | { type: "comparison"; title?: string; pairs: ComparisonPair[] }
+  | { type: "cards"; title?: string; intro?: string; cards: DecisionCard[] };
 
 export interface CaseStudy {
   slug: string;

@@ -92,6 +92,30 @@ function renderContentBlocks(blocks: ContentBlock[]) {
             {renderParagraphs(block.content, styles.body)}
           </div>
         );
+      case "cards":
+        return (
+          <div key={i} className={styles.cardsBlock}>
+            {block.title && (
+              <h3 className={styles.contentSubhead}>{block.title}</h3>
+            )}
+            {block.intro && (
+              <p className={styles.body}>{renderInline(block.intro)}</p>
+            )}
+            <div className={styles.decisionGrid}>
+              {block.cards.map((card, j) => (
+                <div key={j} className={styles.decisionCard}>
+                  <h4 className={styles.decisionCardTitle}>{card.title}</h4>
+                  <p className={styles.decisionCardDesc}>{card.desc}</p>
+                  {card.code && (
+                    <pre className={styles.decisionCode}>
+                      <code>{card.code}</code>
+                    </pre>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       case "gallery":
         return (
           <div key={i} className={styles.galleryBlock}>
