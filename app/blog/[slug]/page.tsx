@@ -42,15 +42,6 @@ export async function generateMetadata({
   };
 }
 
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr + "T00:00:00");
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await getPost(slug);
@@ -81,8 +72,6 @@ export default async function BlogPostPage({ params }: PageProps) {
         <header className={styles.header}>
           <h1 className={styles.title}>{post.title}</h1>
           <div className={styles.meta}>
-            <time className={styles.date}>{formatDate(post.date)}</time>
-            <span className={styles.dot}>·</span>
             <span className={styles.readTime}>{post.readTime}</span>
           </div>
         </header>

@@ -20,15 +20,6 @@ export const metadata: Metadata = {
   },
 };
 
-function formatDate(dateStr: string): string {
-  const date = new Date(dateStr + "T00:00:00");
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export default function BlogPage() {
   const posts = getAllPosts();
   const [latestPost, ...olderPosts] = posts;
@@ -60,10 +51,6 @@ export default function BlogPage() {
               <div className={styles.heroOverlay} />
               <div className={styles.heroContent}>
                 <div className={styles.heroMeta}>
-                  <time className={styles.heroDate}>
-                    {formatDate(latestPost.date)}
-                  </time>
-                  <span className={styles.heroDot}>·</span>
                   <span className={styles.heroReadTime}>
                     {latestPost.readTime}
                   </span>
@@ -97,10 +84,6 @@ export default function BlogPage() {
                 <div className={styles.postContent}>
                   <h2 className={styles.postTitle}>{post.title}</h2>
                   <div className={styles.postMeta}>
-                    <time className={styles.postDate}>
-                      {formatDate(post.date)}
-                    </time>
-                    <span className={styles.postDot}>·</span>
                     <span className={styles.postReadTime}>
                       {post.readTime}
                     </span>
